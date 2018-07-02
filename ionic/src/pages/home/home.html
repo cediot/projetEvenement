@@ -1,21 +1,25 @@
 <ion-header>
   <ion-navbar>
-     
+
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+    <ion-title>Accueil</ion-title>
     
+
   </ion-navbar>
 
 </ion-header>
 
 <ion-content>
-  <h3>Ionic Menu Starter</h3>
+  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+
   <agm-map [latitude]="lat" [longitude]="lng">
     <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
   </agm-map>
- 
+
 </ion-content>
 <ion-footer no-border>
-   
+
 </ion-footer>
