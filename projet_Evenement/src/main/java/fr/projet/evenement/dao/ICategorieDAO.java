@@ -7,4 +7,5 @@ import fr.projet.evenement.entity.Categorie;
 
 @Repository
 public interface ICategorieDAO extends PagingAndSortingRepository<Categorie, Integer> {
+
 }
