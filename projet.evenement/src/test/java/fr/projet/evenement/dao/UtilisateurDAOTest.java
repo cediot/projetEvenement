@@ -72,9 +72,9 @@ public class UtilisateurDAOTest extends AbstractAnnotationTest {
 
 	@Test
 	public void ComparateurUtil() throws Exception {
-		Utilisateur comparateurUtil = this.dao.findOne(8);
-		Utilisateur comparateurUtilDeux = this.dao.findOne(9);
-		Assert.assertNotEquals("verifique qu'il n'y a pas deux utilisateur identique", comparateurUtil.getNom(),
+		Utilisateur comparateurUtil = this.dao.save(this.createUtilisateur());
+		Utilisateur comparateurUtilDeux = this.dao.save(this.createUtilisateur());
+		Assert.assertEquals("verifique qu'il n'y a pas deux utilisateur identique", comparateurUtil.getNom(),
 				comparateurUtilDeux.getNom());
 	}
 }
