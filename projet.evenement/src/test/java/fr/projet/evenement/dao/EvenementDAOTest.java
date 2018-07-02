@@ -66,4 +66,51 @@ public class EvenementDAOTest extends AbstractAnnotationTest {
 			Assert.assertTrue("Une des categories doit être celle demandee", trouve);
 		}
 	}
+
+	@Test
+	public void testfindEvenementByCategoriesOk() throws Exception {
+		final int catId = 2;
+		Categorie cat1 = this.daoCategorie.findOne(catId);
+		Assert.assertNotNull("La categorie ne doit pas etre null", cat1);
+		Assert.assertEquals("L'id doit etre " + catId, catId, cat1.getId());
+
+		final int catIdDeux = 3;
+		Categorie cat2 = this.daoCategorie.findOne(catIdDeux);
+		Assert.assertNotNull("La categorie ne doit pas etre null", cat2);
+		Assert.assertEquals("L'id doit etre " + catIdDeux, catIdDeux, cat2.getId());
+
+		final int catIdTrois = 5;
+		Categorie cat3 = this.daoCategorie.findOne(catIdTrois);
+		Assert.assertNotNull("La categorie ne doit pas etre null", cat3);
+		Assert.assertEquals("L'id doit etre " + catIdTrois, catIdTrois, cat3.getId());
+
+		Assert.assertNotEquals(cat1, cat2);
+		Assert.assertNotEquals(cat2, cat3);
+		Assert.assertNotEquals(cat1, cat3);
+
+		List<Evenement> evt = this.dao.findEvenementByCategories(cat1, cat2, cat3);
+		Assert.assertNotNull("Ma liste ne doit pas etre null", evt);
+
+		for (Evenement evenement : evt) {
+			Assert.assertNotNull("L'evenement ne doit pas etre null", evenement);
+			List<Categorie> catEvn = evenement.getCategories();
+			Assert.assertNotNull("Les categories de l'evenement ne doivent pas etre null", catEvn);
+			boolean trouve[] = { false, false, false };
+			for (Categorie categorie : catEvn) {
+				if (categorie.equals(cat1)) {
+					trouve[0] = true;
+					continue;
+				}
+				if (categorie.equals(cat2)) {
+					trouve[1] = true;
+					continue;
+				}
+				if (categorie.equals(cat3)) {
+					trouve[2] = true;
+					continue;
+				}
+			}
+			Assert.assertTrue("Une des categories doit être celle demandee", trouve[0] && trouve[1] && trouve[2]);
+		}
+	}
 }
