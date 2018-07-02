@@ -16,7 +16,9 @@ public interface IEvenementDAO extends PagingAndSortingRepository<Evenement, Int
 	// Query("from Evenement e, IN(e.categories) cats where cats.id = :cat.id")
 	@Query("from Evenement e where :cat member e.categories")
 	public List<Evenement> findEvenementContainingCategories(@Param("cat") Categorie cat);
-	//
+
+	// sortir les evenements qui ont plusieurs categories
+
 	// @Query("from Evenement e, IN(e.categories) cats where cats.id = :cat1.id or
 	// cats.id = :cat2.id or cats.id = :cat3.id")
 	// public List<Evenement> findEvenementByCategories(@Param("cat1") Categorie
