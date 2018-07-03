@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
+import { Calendar } from '@ionic-native/calendar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -13,7 +15,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { RevealProvider } from '../providers/reveal/reveal';
 import { EventsPage } from '../pages/events/events';
 import { AgendaPage } from '../pages/agenda/agenda';
+import { SchedulePage } from '../pages/schedule/schedule';
+import { CalendarComponent } from '../components/calendar/calendar';
 
+import { CalendarModule } from 'angular-calendar';
 
 
 @NgModule({
@@ -21,10 +26,15 @@ import { AgendaPage } from '../pages/agenda/agenda';
     MyApp,
     HomePage,
     EventsPage,
-    AgendaPage
+    AgendaPage,
+    SchedulePage,
+    CalendarComponent,
+    
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    CalendarModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDPAFhOaeiQo7fum-pewjEAHT3E_ywQpEU'
     }),
@@ -35,14 +45,16 @@ import { AgendaPage } from '../pages/agenda/agenda';
     MyApp,
     HomePage,
     EventsPage,
-    AgendaPage
+    AgendaPage,
+    SchedulePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     RevealProvider,
-    Geolocation
+    Geolocation,
+    Calendar
   ]
 })
 export class AppModule { }
