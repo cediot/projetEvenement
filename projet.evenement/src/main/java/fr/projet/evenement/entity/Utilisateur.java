@@ -45,6 +45,8 @@ public class Utilisateur implements Serializable {
 
 	private int reputation;
 
+	private int utilisateurSupr;
+
 	// bi-directional many-to-one association to Evenement
 	@OneToMany(mappedBy = "utilisateur")
 	private List<Evenement> evenements1;
@@ -126,6 +128,14 @@ public class Utilisateur implements Serializable {
 
 	public void setReputation(int reputation) {
 		this.reputation = reputation;
+	}
+
+	public int getUtilisateurSupr() {
+		return this.utilisateurSupr;
+	}
+
+	public void setUtilisateurSupr(int utilisateurSupr) {
+		this.utilisateurSupr = utilisateurSupr;
 	}
 
 	public List<Evenement> getEvenements1() {

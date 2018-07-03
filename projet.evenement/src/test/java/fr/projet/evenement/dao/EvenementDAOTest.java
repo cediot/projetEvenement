@@ -23,10 +23,11 @@ public class EvenementDAOTest extends AbstractAnnotationTest {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		unEvenenement.setAdresse("5 allee des mimosas");
 		// unEvenenement.setCategories(categories);
-		unEvenenement.setDuree("1 jour");// TODO reflechir au format des delais des evenements
+		unEvenenement.setDateDebut(new java.sql.Date(sdf.parse("17/01/2018").getTime()));
+		unEvenenement.setDateFin(new java.sql.Date(sdf.parse("18/01/2018").getTime()));
 		unEvenenement.setNom("Michel");
 		// unEvenenement.setRessources(ressources);
-		unEvenenement.setTarif("10");// TODO typer le tarif en decimal
+		unEvenenement.setTarif("10");
 		// unEvenenement.setUtilisateur(utilisateur);
 		// unEvenenement.setUtilisateurs1(utilisateurs1);
 		// unEvenenement.setUtilisateurs2(utilisateurs2);

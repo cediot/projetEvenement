@@ -1,6 +1,7 @@
 package fr.projet.evenement.entity;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -26,13 +27,17 @@ public class Evenement implements Serializable {
 
 	private String adresse;
 
-	private String duree;
+	private Date dateDebut;
+
+	private Date dateFin;
 
 	private String nom;
 
 	private String tarif;
 
 	private byte validation;
+
+	private int evenementSupr;
 
 	// bi-directional many-to-one association to Utilisateur
 	@ManyToOne
@@ -77,12 +82,20 @@ public class Evenement implements Serializable {
 		this.adresse = adresse;
 	}
 
-	public String getDuree() {
-		return this.duree;
+	public Date getDateDebut() {
+		return this.dateDebut;
 	}
 
-	public void setDuree(String duree) {
-		this.duree = duree;
+	public void setDateDebut(Date dateDebut) {
+		this.dateDebut = dateDebut;
+	}
+
+	public Date getDateFin() {
+		return this.dateFin;
+	}
+
+	public void setDateFin(Date dateFin) {
+		this.dateFin = dateFin;
 	}
 
 	public String getNom() {
@@ -107,6 +120,14 @@ public class Evenement implements Serializable {
 
 	public void setValidation(byte validation) {
 		this.validation = validation;
+	}
+
+	public int getEvenementSupr() {
+		return this.evenementSupr;
+	}
+
+	public void setEvenementSupr(int evenementSupr) {
+		this.evenementSupr = evenementSupr;
 	}
 
 	public Utilisateur getUtilisateur() {
