@@ -1,5 +1,6 @@
 package fr.projet.evenement.dao;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
@@ -24,4 +25,16 @@ public interface IEvenementDAO extends PagingAndSortingRepository<Evenement, Int
 	@Query("from Evenement e where :cat1 member e.categories and :cat2 member e.categories and :cat3 member e.categories")
 	public List<Evenement> findEvenementByCategories(@Param("cat1") Categorie cat1, @Param("cat2") Categorie cat2,
 			@Param("cat3") Categorie cat3);
+
+	// evenement(s) par date
+	@Query("from Evenement e where e.dateDebut >= :dateDebut order by e.dateDebut DESC")
+	public abstract List<Evenement> findByDateDebut(@Param("dateDebut") Timestamp dateDebut);
+
+	// evenement(s) entre deux date
+	// @Query("from Evenement e where e.dateChoisi = e.dateChoisi between :dateDebut
+	// and :dateFin order by e.dateDebut DESC")
+
+	// public abstract List<Evenement> findByDateBetween(@Param("dateDebut")
+	// Timestamp dateDebut,@Param("dateFin") Timestamp dateFin);
+
 }
