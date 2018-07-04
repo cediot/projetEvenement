@@ -47,7 +47,9 @@ export class SchedulePage {
     console.log('ionViewDidLoad SchedulePage');
   }
 
-  goToDetail(){
-
+  goToDetail(events){
+    for(let i=0; i<events.length;i++){
+      console.log(events[i])
+    }
   }
 }

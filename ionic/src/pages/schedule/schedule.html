@@ -5,16 +5,16 @@
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
-    <ion-title></ion-title>
+    <ion-title>liste d'evenements</ion-title>
   </ion-navbar>
 
 </ion-header>
-
+<!--cette page affichera la liste des evenements existant en cour et a venir dans la zone selectionné -->
 
 <ion-content padding>
-  <ion-grid *ngIf="event">
-    <ion-row  *ngFor="let event of events" (click)="goToDetail(event)">
-        {{p.title}}
-    </ion-row>
-  </ion-grid>
+  
+    <button ion-button *ngFor="let event of events" (click)="goToDetail(event)">
+        {{event}}
+    </button>
+ 
 </ion-content>
