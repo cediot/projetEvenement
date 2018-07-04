@@ -52,6 +52,11 @@
     <ion-label color="primary" stacked>Ville</ion-label>
     <ion-textarea disabled="true" placeholder="Uniquement Lille pour le moment" clearInput></ion-textarea>
   </ion-item>
+  <ion-item>
+      <ion-label floating>Description</ion-label>
+      <ion-textarea elasticTextArea [(ngModel)]="description">
+      </ion-textarea>
+    </ion-item>
   <button ion-button color="default" clear>Creer/ajouter</button>
   <ion-footer>
       <p>Designed by AKCF</p>
