@@ -53,21 +53,21 @@ public class Utilisateur implements Serializable {
 	// bi-directional many-to-one association to Evenement
 	@OneToMany(mappedBy = "utilisateur")
 	@JsonIgnore
-	private List<Evenement> evenements1;
+	private List<Evenement> evenementsDontJeSuisLeCreateur;
 
 	// bi-directional many-to-many association to Evenement
 	@ManyToMany
 	@JoinTable(name = "evenement_valider_par_utilisateur", joinColumns = {
 			@JoinColumn(name = "utilisateur_id") }, inverseJoinColumns = { @JoinColumn(name = "evenement_id") })
 	@JsonIgnore
-	private List<Evenement> evenements2;
+	private List<Evenement> evenementsValides;
 
 	// bi-directional many-to-many association to Evenement
 	@ManyToMany
 	@JoinTable(name = "utilisateur_participe_evenement", joinColumns = {
 			@JoinColumn(name = "utilisateur_id") }, inverseJoinColumns = { @JoinColumn(name = "evenement_id") })
 	@JsonIgnore
-	private List<Evenement> evenements3;
+	private List<Evenement> evenementsOuJeParticipe;
 
 	public Utilisateur() {
 	}
@@ -144,42 +144,42 @@ public class Utilisateur implements Serializable {
 		this.utilisateurSupr = utilisateurSupr;
 	}
 
-	public List<Evenement> getEvenements1() {
-		return this.evenements1;
+	public List<Evenement> getEvenementsDontJeSuisLeCreateur() {
+		return this.evenementsDontJeSuisLeCreateur;
 	}
 
-	public void setEvenements1(List<Evenement> evenements1) {
-		this.evenements1 = evenements1;
+	public void setEvenementsDontJeSuisLeCreateur(List<Evenement> evenements1) {
+		this.evenementsDontJeSuisLeCreateur = evenements1;
 	}
 
 	public Evenement addEvenements1(Evenement evenements1) {
-		this.getEvenements1().add(evenements1);
+		this.getEvenementsDontJeSuisLeCreateur().add(evenements1);
 		evenements1.setUtilisateur(this);
 
 		return evenements1;
 	}
 
 	public Evenement removeEvenements1(Evenement evenements1) {
-		this.getEvenements1().remove(evenements1);
+		this.getEvenementsDontJeSuisLeCreateur().remove(evenements1);
 		evenements1.setUtilisateur(null);
 
 		return evenements1;
 	}
 
-	public List<Evenement> getEvenements2() {
-		return this.evenements2;
+	public List<Evenement> getEvenementsValides() {
+		return this.evenementsValides;
 	}
 
-	public void setEvenements2(List<Evenement> evenements2) {
-		this.evenements2 = evenements2;
+	public void setEvenementsValides(List<Evenement> evenements2) {
+		this.evenementsValides = evenements2;
 	}
 
-	public List<Evenement> getEvenements3() {
-		return this.evenements3;
+	public List<Evenement> getEvenementsOuJeParticipe() {
+		return this.evenementsOuJeParticipe;
 	}
 
-	public void setEvenements3(List<Evenement> evenements3) {
-		this.evenements3 = evenements3;
+	public void setEvenementsOuJeParticipe(List<Evenement> evenements3) {
+		this.evenementsOuJeParticipe = evenements3;
 	}
 
 }
