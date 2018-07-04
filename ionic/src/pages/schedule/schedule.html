@@ -12,5 +12,9 @@
 
 
 <ion-content padding>
-  
+  <ion-grid *ngIf="event">
+    <ion-row  *ngFor="let event of events" (click)="goToDetail(event)">
+        {{p.title}}
+    </ion-row>
+  </ion-grid>
 </ion-content>
