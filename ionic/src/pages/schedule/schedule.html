@@ -13,8 +13,8 @@
 
 <ion-content padding>
   
-    <button ion-button *ngFor="let event of events" (click)="goToDetail(event)">
-        {{event}}
+    <button ion-button *ngFor="let event of events" (click)="goToDetail(events)">
+        {{event.nom}}
     </button>
  
 </ion-content>
