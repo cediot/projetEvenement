@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = ProjetEvenementApplication.class)
 @Transactional
-@Rollback(false)
+@Rollback(true)
 public abstract class AbstractAnnotationTest {
 	// Pour porter les annotations
 }
