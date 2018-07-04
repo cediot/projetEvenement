@@ -1,5 +1,6 @@
 package fr.projet.evenement.dao;
 
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import fr.projet.evenement.entity.Evenement;
 public class EvenementDAOTest extends AbstractAnnotationTest {
 	@Autowired
 	private IEvenementDAO dao;
-
+	@Autowired
 	private ICategorieDAO daoCategorie;
 
 	@Autowired
@@ -24,8 +25,8 @@ public class EvenementDAOTest extends AbstractAnnotationTest {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		unEvenenement.setAdresse("5 allee des mimosas");
 		// unEvenenement.setCategories(categories);
-		unEvenenement.setDateDebut(new java.sql.Date(sdf.parse("17/01/2018").getTime()));
-		unEvenenement.setDateFin(new java.sql.Date(sdf.parse("18/01/2018").getTime()));
+		unEvenenement.setDateDebut(new java.sql.Timestamp(sdf.parse("17/01/2018").getTime()));
+		unEvenenement.setDateFin(new java.sql.Timestamp(sdf.parse("18/01/2018").getTime()));
 		unEvenenement.setNom("Michel");
 		// unEvenenement.setRessources(ressources);
 		unEvenenement.setTarif("10");
@@ -34,6 +35,44 @@ public class EvenementDAOTest extends AbstractAnnotationTest {
 		// unEvenenement.setUtilisateurs2(utilisateurs2);
 		unEvenenement.setValidation((byte) 1);
 		return unEvenenement;
+	}
+
+	@Test
+	public void testFindByDate() throws Exception {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		Timestamp dateChoisi = new Timestamp(sdf.parse("17/01/2018 09:00:00").getTime());
+
+		List<Evenement> evt = this.dao.findByDateDebut(dateChoisi);
+		Assert.assertNotNull("Ma liste ne doit pas etre null", evt);
+
+		for (Evenement evenement : evt) {
+			Assert.assertNotNull("L'evenement ne doit pas etre null", evenement);
+			Timestamp dd = evenement.getDateDebut();
+			Assert.assertNotNull("les dates ne doivent pas etre nul", dd);
+			Assert.assertTrue("la date de l evenement doit etre egale ou apres la date choisi",
+					dd.after(dateChoisi) || dd.equals(dateChoisi));
+		}
+		// }
+		//
+		// @Test
+		// public void testFindByDateBetween() throws Exception {
+		// SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		// Timestamp dateChoisiDebut = new Timestamp(sdf.parse("17/01/2018
+		// 09:00:00").getTime());
+		// Timestamp dateChoisiFin = new Timestamp(sdf.parse("17/01/2018
+		// 09:00:00").getTime());
+		// List<Evenement> evt = this.dao.findByDateBetween(dateChoisiDebut,
+		// dateChoisiFin);
+		// Assert.assertNotNull("Ma liste ne doit pas etre null", evt);
+		//
+		// for (Evenement evenement : evt) {
+		// Assert.assertNotNull("L'evenement ne doit pas etre null", evenement);
+		// Timestamp dd = evenement.getDateDebut();
+		// Assert.assertNotNull("les dates ne doivent pas etre nul", dd);
+		// Assert.assertTrue("la date de l evenement doit etre entre la date de debut et
+		// la date de fin",
+		// dd.after(dateChoisiDebut) && dd.before(dateChoisiFin));
+		// }
 	}
 
 	@Test
@@ -114,5 +153,6 @@ public class EvenementDAOTest extends AbstractAnnotationTest {
 			}
 			Assert.assertTrue("Une des categories doit être celle demandee", trouve[0] && trouve[1] && trouve[2]);
 		}
+
 	}
 }
