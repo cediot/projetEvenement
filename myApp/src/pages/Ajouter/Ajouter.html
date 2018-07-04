@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title id="titre">
+      <h1>Creer ou ajouter un événement</h1>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Categorie</ion-label>
+      <ion-select [(ngModel)]="categorie">
+        <ion-option value="nes">Cinema</ion-option>
+        <ion-option value="n64">Theatre</ion-option>
+        <ion-option value="ps">Zoo</ion-option>
+        <ion-option value="genesis">Spectacle</ion-option>
+        <ion-option value="saturn">Soiree</ion-option>
+        <ion-option value="snes">Pic-nic</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-item>
+    <ion-label placeholder="ex: 10 € " color="primary" fixed >Tarif</ion-label>
+    <ion-input placeholder="ex: 10 € " clearInput></ion-input> 
+  </ion-item>
+
+  <p>A partir du </p>
+
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="myDate"></ion-datetime>
+  </ion-item>
+
+  <p>au</p>
+
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="myDate"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" fixed>Adresse</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="ex: 6 rue de la victoire" clearInput></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Ville</ion-label>
+    <ion-textarea disabled="true" placeholder="Uniquement Lille pour le moment" clearInput></ion-textarea>
+  </ion-item>
+  <button ion-button color="default" clear>Creer/ajouter</button>
+  <ion-footer>
+      <p>Designed by AKCF</p>
+  </ion-footer>
