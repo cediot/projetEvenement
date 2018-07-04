@@ -14,9 +14,10 @@ import fr.projet.evenement.entity.Evenement;
 public class EvenementDAOTest extends AbstractAnnotationTest {
 	@Autowired
 	private IEvenementDAO dao;
-	@Autowired
+
 	private ICategorieDAO daoCategorie;
 
+	@Autowired
 	private Evenement createEvenement() throws Exception {
 		Evenement unEvenenement = new Evenement();
 		// 02/07/1994
