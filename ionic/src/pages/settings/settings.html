@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title><h1>Settings</h1></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <!-- <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon [name]="item.icon" item-start></ion-icon>
+      {{item.title}}
+      <div class="item-note" item-end>
+        {{item.note}}
+      </div>
+    </button>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div> -->
+  <ion-slides pager>
+    <ion-slide>
+      <h3>Connexion</h3>
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+        <button ion-button color="default" clear>Se connecter</button>
+        <p class="pq">Pour creer un compte il suffit de glisser à droite   <ion-icon name="redo"></ion-icon>
+        </p>
+      </ion-list>
+    </ion-slide>
+    <ion-slide >
+      <h3>Inscription</h3>
+      <ion-list>
+        <ion-item>
+          <ion-label color="primary" fixed>Nom</ion-label>
+          <ion-input placeholder="Votre nom"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" fixed>Prenom</ion-label>
+          <ion-input placeholder="Votre prenom"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label color="primary" fixed>Telephone</ion-label>
+          <ion-input type="number" placeholder="ex: 0612345678"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" fixed>Email</ion-label>
+          <ion-input type="email" placeholder="ex: Email@email.com"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" fixed>Date de Naissance</ion-label>
+          <ion-input type="date" placeholder=""></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" fixed>Pseudo</ion-label>
+          <ion-input type="text" placeholder="ex: Martin123"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" fixed>Mot de passe</ion-label>
+          <ion-input type="password" placeholder="Votre mot de passe"></ion-input>
+        </ion-item>
+
+
+        <button ion-button color="default" clear>Inscription</button>
+
+      </ion-list>
+    </ion-slide>
+    <ion-slide >
+      <h2 id="pqc">Pourquoi creer un compte ?</h2>
+      <p class="pq">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur, placeat ipsum asperiores optio tenetur accusantium? Sequi, fuga, quisquam, natus commodi officia numquam fugiat iure dolore nemo suscipit ipsum similique eius.
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ducimus tempora, nobis magni soluta non nulla reprehenderit animi et impedit sed voluptatibus laboriosam enim veniam, ut error placeat. Magnam, optio?
+      </p>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-footer>
+    <p>Designed by AKCF</p>
+</ion-footer>

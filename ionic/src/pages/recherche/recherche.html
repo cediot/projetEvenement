@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <h3>Rechercher un événement</h3>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Cinema</ion-label>
+      <ion-checkbox [(ngModel)]="Cinema"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Theatre</ion-label>
+      <ion-checkbox [(ngModel)]="Theatre"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Zoo</ion-label>
+      <ion-checkbox [(ngModel)]="Zoo"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Spectacle</ion-label>
+      <ion-checkbox [(ngModel)]="Spectacle"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Soiree</ion-label>
+      <ion-checkbox [(ngModel)]="Soiree"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Pic-nic</ion-label>
+      <ion-checkbox [(ngModel)]="Pic-nic"></ion-checkbox>
+    </ion-item>
+
+  </ion-list>
+
+  <p>A partir du </p>
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="myDate"></ion-datetime>
+  </ion-item>
+  <p>au</p>
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="myDate"></ion-datetime>
+  </ion-item>
+  <!-- <ion-item>
+    <ion-label disabled="true" color="primary" floating>Ville</ion-label>
+    <ion-input></ion-input>
+  </ion-item> -->
+  <ion-item>
+    <ion-label  disabled="true" placeholder="Uniquement Lille pour le moment" color="primary" stacked>Ville : Uniquement Lille pour le moment</ion-label>
+  </ion-item>
+  <button ion-button color="default" clear>Rechercher</button>
+  <ion-footer>
+      <p>Designed by AKCF</p>
+  </ion-footer>
+

@@ -7,6 +7,9 @@ import { HomePage } from '../pages/home/home';
 import { EventsPage } from '../pages/events/events';
 import { AgendaPage } from '../pages/agenda/agenda';
 import { SchedulePage } from '../pages/schedule/schedule';
+import { AjouterPage } from '../pages/ajouter/ajouter';
+import { RecherchePage } from '../pages/recherche/recherche';
+import { SettingsPage } from '../pages/settings/settings';
 
 
 @Component({
@@ -26,9 +29,11 @@ export class MyApp {
     this.pages = [
       { title: 'Accueil', component: HomePage },
       { title: 'Agenda', component: AgendaPage },
-     
+      { title: 'Ajouter', component: AjouterPage },
       { title: 'Liste d\'évenements', component: SchedulePage },
-      { title: 'Evenement', component: EventsPage }
+      { title: 'Evenement', component: EventsPage },
+      { title: 'Recherche', component: RecherchePage },
+      { title: 'Parametres', component: SettingsPage }
     ];
 
   }
