@@ -36,4 +36,15 @@ public class ExceptionJson {
 		this.type = type;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("ExceptionJson [message=");
+		builder.append(this.message);
+		builder.append(", type=");
+		builder.append(this.type);
+		builder.append("]");
+		return builder.toString();
+	}
+
 }

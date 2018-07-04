@@ -39,6 +39,7 @@ public class Evenement implements Serializable {
 
 	private byte validation;
 
+	@Column(name = "evenementSupr")
 	private int evenementSupr;
 
 	// bi-directional many-to-one association to Utilisateur

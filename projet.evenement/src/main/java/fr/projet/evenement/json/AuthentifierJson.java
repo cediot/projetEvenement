@@ -26,4 +26,15 @@ public class AuthentifierJson {
 		this.pwd = pwd;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("AuthentifierJson [email=");
+		builder.append(this.email);
+		builder.append(", pwd=");
+		builder.append(this.pwd);
+		builder.append("]");
+		return builder.toString();
+	}
+
 }

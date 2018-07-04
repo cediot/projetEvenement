@@ -16,6 +16,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * The persistent class for the utilisateur database table.
  *
@@ -50,18 +52,21 @@ public class Utilisateur implements Serializable {
 
 	// bi-directional many-to-one association to Evenement
 	@OneToMany(mappedBy = "utilisateur")
+	@JsonIgnore
 	private List<Evenement> evenements1;
 
 	// bi-directional many-to-many association to Evenement
 	@ManyToMany
 	@JoinTable(name = "evenement_valider_par_utilisateur", joinColumns = {
 			@JoinColumn(name = "utilisateur_id") }, inverseJoinColumns = { @JoinColumn(name = "evenement_id") })
+	@JsonIgnore
 	private List<Evenement> evenements2;
 
 	// bi-directional many-to-many association to Evenement
 	@ManyToMany
 	@JoinTable(name = "utilisateur_participe_evenement", joinColumns = {
 			@JoinColumn(name = "utilisateur_id") }, inverseJoinColumns = { @JoinColumn(name = "evenement_id") })
+	@JsonIgnore
 	private List<Evenement> evenements3;
 
 	public Utilisateur() {

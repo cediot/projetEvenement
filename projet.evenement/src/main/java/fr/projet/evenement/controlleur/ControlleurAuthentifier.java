@@ -28,7 +28,7 @@ public class ControlleurAuthentifier {
 	@RequestMapping(produces = "application/json; charset=UTF-8", consumes = "application/json; charset=UTF-8", method = {
 			RequestMethod.PUT })
 	public ResponseEntity<Object> auth001(@RequestBody AuthentifierJson autJson) {
-		ControlleurAuthentifier.LOG.debug("Dans mon WS ControlleurAuthentifier");
+		ControlleurAuthentifier.LOG.debug("Dans mon WS ControlleurAuthentifier {}", autJson);
 		ResponseEntity<Object> reponse = null;
 		Utilisateur user = null;
 		try {
@@ -38,7 +38,7 @@ public class ControlleurAuthentifier {
 			ControlleurAuthentifier.LOG.debug("Dans mon WS ControlleurAuthentifier qui a plente!", e);
 		}
 		if (reponse == null) {
-			reponse = new ResponseEntity<>(user, HttpStatus.ACCEPTED);
+			reponse = new ResponseEntity<>(user, HttpStatus.OK);
 			ControlleurAuthentifier.LOG.debug("Dans mon WS ControlleurAuthentifier tout est ok");
 		}
 		return reponse;
