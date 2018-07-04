@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class EventDetailsComponent {
 
+  selectedEvent : Event;
   text: string;
 
   constructor() {
@@ -14,4 +15,7 @@ export class EventDetailsComponent {
     this.text = 'Hello World';
   }
 
+  onSelect(event:Event){
+    this.selectedEvent=event;
+  }
 }

@@ -49,7 +49,7 @@ export class SchedulePage {
 
   goToDetail(events){
     
-    for(let event in events){
+    for(let event of events){
       console.log(event);
     }
   }
