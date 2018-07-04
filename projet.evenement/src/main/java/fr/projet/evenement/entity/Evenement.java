@@ -1,9 +1,10 @@
 package fr.projet.evenement.entity;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,9 +28,10 @@ public class Evenement implements Serializable {
 
 	private String adresse;
 
-	private Date dateDebut;
-
-	private Date dateFin;
+	@Column(name = "dateDebut")
+	private Timestamp dateDebut;
+	@Column(name = "dateFin")
+	private Timestamp dateFin;
 
 	private String nom;
 
@@ -37,6 +39,7 @@ public class Evenement implements Serializable {
 
 	private byte validation;
 
+	@Column(name = "evenementSupr")
 	private int evenementSupr;
 
 	// bi-directional many-to-one association to Utilisateur
@@ -82,19 +85,19 @@ public class Evenement implements Serializable {
 		this.adresse = adresse;
 	}
 
-	public Date getDateDebut() {
+	public Timestamp getDateDebut() {
 		return this.dateDebut;
 	}
 
-	public void setDateDebut(Date dateDebut) {
+	public void setDateDebut(Timestamp dateDebut) {
 		this.dateDebut = dateDebut;
 	}
 
-	public Date getDateFin() {
+	public Timestamp getDateFin() {
 		return this.dateFin;
 	}
 
-	public void setDateFin(Date dateFin) {
+	public void setDateFin(Timestamp dateFin) {
 		this.dateFin = dateFin;
 	}
 
