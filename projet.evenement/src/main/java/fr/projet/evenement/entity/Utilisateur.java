@@ -45,6 +45,7 @@ public class Utilisateur implements Serializable {
 
 	private int reputation;
 
+	@Column(name = "utilisateurSupr")
 	private int utilisateurSupr;
 
 	// bi-directional many-to-one association to Evenement
