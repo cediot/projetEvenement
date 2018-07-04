@@ -1,21 +1,20 @@
-<!--
-  Generated template for the SchedulePage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
       <button ion-button menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
-    <ion-title>Schedule</ion-title>
+    <ion-title>liste d'evenements</ion-title>
   </ion-navbar>
 
 </ion-header>
-
+<!--cette page affichera la liste des evenements existant en cour et a venir dans la zone selectionné -->
 
 <ion-content padding>
-  <app-calendar></app-calendar>
+  
+    <button ion-button *ngFor="let event of events" (click)="goToDetail(event)">
+        {{event}}
+    </button>
+ 
 </ion-content>

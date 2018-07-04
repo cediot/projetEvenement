@@ -11,7 +11,7 @@ public interface IAuthentificationService {
 	 * @param pPassword
 	 *            le password
 	 * @return l'utilisateur authentifie, leve une exception sinon
-	 * @throws FonctionnelleException
+	 * @throws ErreurFonctionnelleException
 	 *             si un probleme metier survient
 	 * @throws ErreurTechniqueException
 	 *             si un probleme technique survient

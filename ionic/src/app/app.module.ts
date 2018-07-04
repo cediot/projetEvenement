@@ -7,6 +7,7 @@ import { Calendar } from '@ionic-native/calendar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { AjouterPage } from '../pages/ajouter/ajouter';
 
 
 import { AgmCoreModule } from '@agm/core';
@@ -19,6 +20,8 @@ import { SchedulePage } from '../pages/schedule/schedule';
 import { CalendarComponent } from '../components/calendar/calendar';
 
 import { CalendarModule } from 'angular-calendar';
+import { RecherchePage } from '../pages/recherche/recherche';
+import { SettingsPage } from '../pages/settings/settings';
 
 
 @NgModule({
@@ -29,7 +32,9 @@ import { CalendarModule } from 'angular-calendar';
     AgendaPage,
     SchedulePage,
     CalendarComponent,
-    
+    AjouterPage,
+    RecherchePage,
+    SettingsPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,10 @@ import { CalendarModule } from 'angular-calendar';
     HomePage,
     EventsPage,
     AgendaPage,
-    SchedulePage
+    SchedulePage,
+    AjouterPage,
+    RecherchePage,
+    SettingsPage
   ],
   providers: [
     StatusBar,

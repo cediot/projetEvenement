@@ -4,17 +4,15 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Accueil</ion-title>
-    
-
+    <ion-title>Bienvenue</ion-title>
+    <ion-buttons right>
+      <ion-icon ios="ios-person" md="md-person"></ion-icon>
+      </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content>
-  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
-  </ion-searchbar>
-
   <agm-map [latitude]="lat" [longitude]="lng">
     <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
   </agm-map>
