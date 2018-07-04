@@ -48,8 +48,9 @@ export class SchedulePage {
   }
 
   goToDetail(events){
-    for(let i=0; i<events.length;i++){
-      console.log(events[i]);
+    
+    for(let event in events){
+      console.log(event);
     }
   }
 }
