@@ -9,7 +9,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SchedulePage {
 
-  events=[{
+  events = [{
     id:1,
     nom:"Jardin Vauban",
     adresse:"Boulevard Vauban 59000 Lille",
@@ -48,8 +48,9 @@ export class SchedulePage {
   }
 
   goToDetail(events){
-    for(let i=0; i<events.length;i++){
-      console.log(events[i])
+    
+    for(let event of events){
+      console.log(event);
     }
   }
 }

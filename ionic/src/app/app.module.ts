@@ -22,6 +22,7 @@ import { CalendarComponent } from '../components/calendar/calendar';
 import { CalendarModule } from 'angular-calendar';
 import { RecherchePage } from '../pages/recherche/recherche';
 import { SettingsPage } from '../pages/settings/settings';
+import { EventDetailsComponent } from '../components/event-details/event-details';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { SettingsPage } from '../pages/settings/settings';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     RevealProvider,
     Geolocation,
-    Calendar
+    Calendar,
+    EventDetailsComponent
   ]
 })
 export class AppModule { }
