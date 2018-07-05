@@ -44,6 +44,7 @@ export class SchedulePage {
 
   goToDetail(event:Event) {
     this.selectedEvent=event;
-    this.navCtrl.push(EventsPage);
+    console.log(event);
+    this.navCtrl.push(EventsPage, {event});
   }
 }
