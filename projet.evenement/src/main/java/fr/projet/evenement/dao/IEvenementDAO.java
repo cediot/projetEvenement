@@ -31,10 +31,10 @@ public interface IEvenementDAO extends PagingAndSortingRepository<Evenement, Int
 	public abstract List<Evenement> findByDateDebut(@Param("dateDebut") Timestamp dateDebut);
 
 	// evenement(s) entre deux date
-	// @Query("from Evenement e where e.dateChoisi = e.dateChoisi between :dateDebut
-	// and :dateFin order by e.dateDebut DESC")
-
-	// public abstract List<Evenement> findByDateBetween(@Param("dateDebut")
-	// Timestamp dateDebut,@Param("dateFin") Timestamp dateFin);
+	// select Evenement from evenemnt where "la date de debut d un evenement est
+	// comprise entre deux dates choisies
+	@Query("from Evenement e where e.dateDebut between :dateDebut and :dateFin order by e.dateDebut DESC")
+	public abstract List<Evenement> findByDateBetween(@Param("dateDebut") Timestamp dateDebut,
+			@Param("dateFin") Timestamp dateFin);
 
 }
