@@ -1,6 +1,6 @@
 package fr.projet.evenement.service;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import fr.projet.evenement.entity.Evenement;
 import fr.projet.evenement.exception.ErreurFonctionnelleException;
@@ -28,7 +28,7 @@ public interface ICreationEvenementService {
 	 * @throws ErreurTechniqueException
 	 *             si un probleme technique survient
 	 */
-	public abstract Evenement CreerEvenement(int utilisateurId, String nomEvenement, String adresse, double tarif,
-			Date dateDebutEvenement, Date dateFinEvenement) throws Exception;
+	public abstract Evenement creerEvenement(int utilisateurId, String nomEvenement, String adresse, double tarif,
+			Timestamp dateDebutEvenement, Timestamp dateFinEvenement) throws Exception;
 
 }

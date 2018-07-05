@@ -1,6 +1,6 @@
 package fr.projet.evenement.json;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  * Le json devra etre : <br/>
@@ -13,8 +13,8 @@ public class CreerEvenementJson {
 	private String nomEvenement;
 	private String adresse;
 	private double tarif;
-	private Date dateDebutEvenement;
-	private Date deteFinEvenement;
+	private Timestamp dateDebutEvenement;
+	private Timestamp dateFinEvenement;
 
 	public int getUtilisateurId() {
 		return this.utilisateurId;
@@ -48,20 +48,20 @@ public class CreerEvenementJson {
 		this.tarif = tarif;
 	}
 
-	public Date getDateDebutEvenement() {
+	public Timestamp getDateDebutEvenement() {
 		return this.dateDebutEvenement;
 	}
 
-	public void setDateDebutEvenement(Date dateDebutEvenement) {
+	public void setDateDebutEvenement(Timestamp dateDebutEvenement) {
 		this.dateDebutEvenement = dateDebutEvenement;
 	}
 
-	public Date getDeteFinEvenement() {
-		return this.deteFinEvenement;
+	public Timestamp getDateFinEvenement() {
+		return this.dateFinEvenement;
 	}
 
-	public void setDeteFinEvenement(Date deteFinEvenement) {
-		this.deteFinEvenement = deteFinEvenement;
+	public void setDateFinEvenement(Timestamp dateFinEvenement) {
+		this.dateFinEvenement = dateFinEvenement;
 	}
 
 	@Override
@@ -77,8 +77,8 @@ public class CreerEvenementJson {
 		builder.append(this.tarif);
 		builder.append(", dateDebutEvenement=");
 		builder.append(this.dateDebutEvenement);
-		builder.append(", deteFinEvenement=");
-		builder.append(this.deteFinEvenement);
+		builder.append(", dateFinEvenement=");
+		builder.append(this.dateFinEvenement);
 		builder.append("]");
 		return builder.toString();
 	}

@@ -29,7 +29,7 @@ public class EvenementDAOTest extends AbstractAnnotationTest {
 		unEvenenement.setDateFin(new java.sql.Timestamp(sdf.parse("18/01/2018").getTime()));
 		unEvenenement.setNom("Michel");
 		// unEvenenement.setRessources(ressources);
-		unEvenenement.setTarif("10");
+		unEvenenement.setTarif(10D);
 		// unEvenenement.setUtilisateur(utilisateur);
 		// unEvenenement.setUtilisateurs1(utilisateurs1);
 		// unEvenenement.setUtilisateurs2(utilisateurs2);

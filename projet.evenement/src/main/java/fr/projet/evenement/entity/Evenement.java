@@ -35,7 +35,7 @@ public class Evenement implements Serializable {
 
 	private String nom;
 
-	private String tarif;
+	private Double tarif;
 
 	private byte validation;
 
@@ -112,11 +112,11 @@ public class Evenement implements Serializable {
 		this.nom = nom;
 	}
 
-	public String getTarif() {
+	public Double getTarif() {
 		return this.tarif;
 	}
 
-	public void setTarif(String tarif) {
+	public void setTarif(Double tarif) {
 		this.tarif = tarif;
 	}
 
