@@ -25,7 +25,7 @@ public class ControlleurCreationCompte {
 
 	// http://localhost:8080/creationCompte en PUT uniquement
 	// avec un json dans le body :
-	// {"nom":"legrand","prenom":"gerald","pseudonyme":"gege","email":"toto@oll.com","pwd":"tata","dateDeNaissance":\"1997-07-15\"}
+	// {"nom":"legrand","prenom":"gerald","pseudonyme":"gege","email":"toto@oll.com","pwd":"tata","dateDeNaissance":"1997-07-15\"}
 	// String nom, String prenom,
 
 	@RequestMapping(produces = "application/json; charset=UTF-8", consumes =
@@ -51,6 +51,6 @@ public class ControlleurCreationCompte {
 			ControlleurCreationCompte.LOG.debug("Dans mon WS ControlleurCreationCompte tout est ok");
 		}
 		return reponse;
-	}
+	}// TODO faire methode qui gere la gestion de suppression des utilisateurs
 
 }

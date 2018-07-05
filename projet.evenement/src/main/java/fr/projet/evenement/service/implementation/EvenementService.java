@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import fr.projet.evenement.dao.IUtilisateurDAO;
 import fr.projet.evenement.entity.Evenement;
 import fr.projet.evenement.entity.Utilisateur;
+import fr.projet.evenement.exception.UtilisateurNonReconnuException;
 import fr.projet.evenement.service.IEvenementService;
 
 @Service
@@ -24,21 +25,25 @@ public class EvenementService implements IEvenementService {
 	public Collection<Evenement> findEvenementByUserId(int idUtilisateur, boolean evenementValider,
 			boolean evenementCreateur,
 			boolean evenementParticiper) throws Exception {
-		// TODO gestion des erreurs (utilisateurs n'existe pas)
+
 
 		Utilisateur u = this.util.findOne(idUtilisateur);
-		Set<Evenement> resu = new HashSet<>();
-		if (evenementCreateur) {
-			resu.addAll(u.getEvenementsDontJeSuisLeCreateur());
-		}
-		if (evenementParticiper) {
-			resu.addAll(u.getEvenementsOuJeParticipe());
-		}
-		if (evenementValider) {
-			resu.addAll(u.getEvenementsValides());
-		}
+		if (u == null) {
+			throw new UtilisateurNonReconnuException();
+		} else {
+			Set<Evenement> resu = new HashSet<>();
+			if (evenementCreateur) {
+				resu.addAll(u.getEvenementsDontJeSuisLeCreateur());
+			}
+			if (evenementParticiper) {
+				resu.addAll(u.getEvenementsOuJeParticipe());
+			}
+			if (evenementValider) {
+				resu.addAll(u.getEvenementsValides());
+			}
 
-		return resu;
+			return resu;
+		}
 	}
 
 

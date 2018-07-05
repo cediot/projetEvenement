@@ -22,7 +22,7 @@ public class CreationCompteService implements ICreationCompteService {
 	private IUtilisateurDAO util;
 
 	@Override
-	@Transactional(readOnly = true, rollbackFor = Exception.class)
+	@Transactional(rollbackFor = Exception.class)
 	public Utilisateur creationCompte(String nom, String prenom, String pseudonyme, String email, String pwd,
 			Date dateDeNaissance) throws ErreurFonctionnelleException, ErreurTechniqueException {
 		CreationCompteService.LOG.debug("creationCompte {} Xxxx");
@@ -37,7 +37,7 @@ public class CreationCompteService implements ICreationCompteService {
 		entite.setMotDePasse(pwd);
 		entite.setDateDeNaissance(dateDeNaissance);
 		Utilisateur resultat = null;
-		if (this.util.findEmail(email) != null) { // il existe deja
+		if (this.util.findEmail(email) == null) { // il existe deja
 			resultat = this.util.save(entite);
 		} else {
 			throw new UtilisateurIdentiqueException("meme utilisateur" + email);
