@@ -1,20 +1,19 @@
-
 <ion-header>
 
-  <ion-navbar>
-      <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
         </button>
-    <ion-title>liste d'evenements</ion-title>
-  </ion-navbar>
+        <ion-title>liste d'evenements</ion-title>
+    </ion-navbar>
 
 </ion-header>
 <!--cette page affichera la liste des evenements existant en cour et a venir dans la zone selectionné -->
 
 <ion-content padding>
-  
-    <button ion-button *ngFor="let event of events" [class.selected]="event === selectedEvent" (click)="goToDetail(event)">
-        {{event}}
-    </button>
-
+    <ion-card *ngFor="let event of events" >
+        <button ion-button (click)="goToDetail(event)">
+            {{event}}
+        </button>
+    </ion-card>
 </ion-content>

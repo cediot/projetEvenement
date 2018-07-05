@@ -35,7 +35,8 @@ import { EventDetailsComponent } from '../components/event-details/event-details
     CalendarComponent,
     AjouterPage,
     RecherchePage,
-    SettingsPage
+    SettingsPage,
+    EventDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +56,9 @@ import { EventDetailsComponent } from '../components/event-details/event-details
     SchedulePage,
     AjouterPage,
     RecherchePage,
-    SettingsPage
+    SettingsPage,
+    
+
   ],
   providers: [
     StatusBar,

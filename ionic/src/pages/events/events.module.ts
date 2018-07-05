@@ -3,6 +3,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { EventsPage } from './events';
 import { SchedulePage } from '../schedule/schedule';
 
+
 @NgModule({
   declarations: [
     EventsPage,
