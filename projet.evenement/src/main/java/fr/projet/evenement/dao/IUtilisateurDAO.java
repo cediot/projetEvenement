@@ -22,4 +22,8 @@ public interface IUtilisateurDAO extends PagingAndSortingRepository<Utilisateur,
 	@Query("FROM Utilisateur uti where uti.email = :pEmail and uti.motDePasse = :pMotDePasse")
 	public Utilisateur findLoginMotDePasse(@Param("pEmail") String pEmail, @Param("pMotDePasse") String pMotDePasse);
 
+	@Query("FROM Utilisateur uti where uti.email = :pEmail")
+	public Utilisateur findEmail(@Param("pEmail") String pEmail);
+
+
 }

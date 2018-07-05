@@ -44,6 +44,7 @@ public class Evenement implements Serializable {
 
 	// bi-directional many-to-one association to Utilisateur
 	@ManyToOne
+	// @JsonIgnore
 	private Utilisateur utilisateur;
 
 	// bi-directional many-to-many association to Categorie
@@ -59,11 +60,13 @@ public class Evenement implements Serializable {
 	private List<Ressource> ressources;
 
 	// bi-directional many-to-many association to Utilisateur
-	@ManyToMany(mappedBy = "evenements2")
+	@ManyToMany(mappedBy = "evenementsValides")
+	// @JsonIgnore
 	private List<Utilisateur> utilisateurs1;
 
 	// bi-directional many-to-many association to Utilisateur
-	@ManyToMany(mappedBy = "evenements3")
+	@ManyToMany(mappedBy = "evenementsOuJeParticipe")
+	// @JsonIgnore
 	private List<Utilisateur> utilisateurs2;
 
 	public Evenement() {

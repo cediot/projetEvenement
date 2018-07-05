@@ -1,10 +1,12 @@
 package fr.projet.evenement.service;
 
+import java.sql.Date;
+
 import fr.projet.evenement.entity.Utilisateur;
 import fr.projet.evenement.exception.ErreurFonctionnelleException;
 import fr.projet.evenement.exception.ErreurTechniqueException;
 
-public interface ICreationCompte {
+public interface ICreationCompteService {
 	/**
 	 * Authentifie un utilisateur.
 	 *
@@ -18,6 +20,7 @@ public interface ICreationCompte {
 	 * @throws ErreurTechniqueException
 	 *             si un probleme technique survient
 	 */
-	public abstract Utilisateur authentifier(String pLogin, String pPassword) throws Exception;
+	public abstract Utilisateur creationCompte(String nom, String prenom, String pseudonyme, String email, String pwd,
+			Date dateDeNaissance) throws Exception;
 
 }
