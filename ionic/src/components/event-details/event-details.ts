@@ -10,6 +10,7 @@ export class EventDetailsComponent {
   selectedEvent : Event;
   text: string;
 
+
   constructor() {
     console.log('Hello EventDetailsComponent Component');
     this.text = 'Hello World';
