@@ -17,6 +17,7 @@
     <ion-card *ngFor="let event of events">
         <button ion-button (click)="goToDetail(event)">
             <span class="badge">{{event.nom}}</span>
+            <p>{{event.adresse}}</p>
         </button>
     </ion-card>
 

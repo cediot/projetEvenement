@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import Event from '../../pages/model/event.model';
+import { NavController, NavParams } from 'ionic-angular';
 
 
 @Component({
@@ -8,12 +10,13 @@ import { Component } from '@angular/core';
 export class EventDetailsComponent {
 
   selectedEvent : Event;
-  text: string;
+  
 
 
-  constructor() {
-    console.log('Hello EventDetailsComponent Component');
-    this.text = 'Hello World';
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.selectedEvent=this.navParams.get('selectedEvent');
+    console.log(this.selectedEvent);
+    
   }
 
   onSelect(event:Event){
