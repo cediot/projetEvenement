@@ -13,29 +13,23 @@
 // import fr.projet.evenement.entity.Utilisateur;
 // import fr.projet.evenement.json.CompteJson;
 // import fr.projet.evenement.json.ExceptionJson;
-// import fr.projet.evenement.service.ICreationCompteService;
+// import fr.projet.evenement.service.IUtilisateurService;
 //
 // @RestController
-// @RequestMapping("/creationCompte")
-// public class ControlleurCreationCompte {
+// @RequestMapping("/modification/utilisateur")
+//
+// public class ControlleurModificationUtilisateur {
 // private static final Logger LOG = LogManager.getLogger();
 //
 // @Autowired
-// private ICreationCompteService service;
-//
-// // http://localhost:8080/creationCompte en PUT uniquement
-// // avec un json dans le body :
-// //
-// {"nom":"legrand","prenom":"gerald","pseudonyme":"gege","email":"toto@oll.com","pwd":"tata","dateDeNaissance":"1997-07-15\"}
-// // String nom, String prenom,
-//
+// private IUtilisateurService service;
 // @RequestMapping(produces = "application/json; charset=UTF-8", consumes =
 // "application/json; charset=UTF-8", method = {
 // RequestMethod.PUT })
 // public ResponseEntity<Object> crea001(@RequestBody CompteJson
 // creaComJson)
 // {
-// ControlleurCreationCompte.LOG.debug("Dans mon WS
+// ControlleurModificationUtilisateur.LOG.debug("Dans mon WS
 // ControlleurCreationCompte{}", creaComJson);
 // ResponseEntity<Object> reponse = null;
 // Utilisateur user = null;
@@ -46,15 +40,14 @@
 // creaComJson.getDateDeNaissance());
 // } catch (Exception e) {
 // reponse = new ResponseEntity<>(new ExceptionJson(e), HttpStatus.NOT_FOUND);
-// ControlleurCreationCompte.LOG.debug("Dans mon WS ControlleurCreationCompte
-// qui a plente!", e);
+// ControlleurModificationUtilisateur.LOG.debug("Dans mon WS
+// ControlleurCreationCompte qui a plente!", e);
 // }
 // if (reponse == null) {
 // reponse = new ResponseEntity<>(user, HttpStatus.OK);
-// ControlleurCreationCompte.LOG.debug("Dans mon WS ControlleurCreationCompte
-// tout est ok");
+// ControlleurModificationUtilisateur.LOG.debug("Dans mon WS
+// ControlleurCreationCompte tout est ok");
 // }
 // return reponse;
-// }// TODO faire methode qui gere la gestion de suppression des utilisateurs
-//
+// }
 // }
