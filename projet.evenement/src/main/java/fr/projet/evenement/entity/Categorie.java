@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * The persistent class for the categorie database table.
  *
@@ -23,6 +25,7 @@ public class Categorie implements Serializable {
 
 	// bi-directional many-to-many association to Evenement
 	@ManyToMany(mappedBy = "categories")
+	@JsonIgnore
 	private List<Evenement> evenements;
 
 	public Categorie() {
