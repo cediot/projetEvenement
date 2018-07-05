@@ -11,11 +11,13 @@ import fr.projet.evenement.entity.Utilisateur;
 public interface IUtilisateurDAO extends PagingAndSortingRepository<Utilisateur, Integer> {
 
 	/**
-	 * Selectionne tous les comptes qui appartiennent a un utilisateur.
+	 * Selectionne un utilisateur en fonction de son email et son mot de passe.
 	 *
-	 * @param aUserId
-	 *            un utilisateur id
-	 * @return tous les comptes de l'utilisateur
+	 * @param pEmail
+	 *            une adresse mail
+	 * @param pMotDePasse
+	 *            un mot de passe
+	 * @return un utilisateur
 	 */
 	@Query("FROM Utilisateur uti where uti.email = :pEmail and uti.motDePasse = :pMotDePasse")
 	public Utilisateur findLoginMotDePasse(@Param("pEmail") String pEmail, @Param("pMotDePasse") String pMotDePasse);

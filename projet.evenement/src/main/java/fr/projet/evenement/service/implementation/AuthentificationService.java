@@ -24,9 +24,8 @@ public class AuthentificationService implements IAuthentificationService {
 	public Utilisateur authentifier(String pEmail, String pMotDePasse)
 			throws ErreurFonctionnelleException, ErreurTechniqueException {
 
-
 		AuthentificationService.LOG.debug("authentifier {} Xxxx", pEmail);
-		if (pEmail == null || pEmail.trim().length() == 0) {
+		if (pEmail == null || pEmail.trim().isEmpty()) {
 			throw new IllegalArgumentException("Email");
 		}
 		if (pMotDePasse == null || pMotDePasse.trim().length() == 0) {
