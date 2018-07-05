@@ -14,11 +14,13 @@
     <ion-searchbar [(ngModel)]="searchValue"[showCancelButton]="shouldShowCancel"
     (ionInput)="search()">
     </ion-searchbar>
+    
     <ion-card *ngFor="let event of events">
         <button ion-button (click)="goToDetail(event)">
             <span class="badge">{{event.nom}}</span>
-            <p>{{event.adresse}}</p>
+           
         </button>
+    
     </ion-card>
 
 </ion-content>

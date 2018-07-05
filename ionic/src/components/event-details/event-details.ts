@@ -19,7 +19,5 @@ export class EventDetailsComponent {
     
   }
 
-  onSelect(event:Event){
-    this.selectedEvent=event;
-  }
+  
 }

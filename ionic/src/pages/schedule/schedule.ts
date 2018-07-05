@@ -12,10 +12,11 @@ import { EventsPage } from '../events/events';
 })
 export class SchedulePage {
 
-  events : any;
+  selectedEvent: Event;
   buffer : Array<any>;
   searchType: 'nom' | 'dateDebut' = 'nom';
   searchValue: string='';
+  events: Event[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public api:ListEventProvider ) {
     this.events=api.getEvents();
@@ -39,8 +40,10 @@ export class SchedulePage {
     }
   }
 
-  goToDetail() {
-    
-    this.navCtrl.push(EventsPage,{event:Event});
+  
+
+  goToDetail(event:Event) {
+    this.selectedEvent=event;
+    this.navCtrl.push(EventsPage);
   }
 }

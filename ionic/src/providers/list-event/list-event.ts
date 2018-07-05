@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 import Event from '../../pages/model/event.model';
 
@@ -9,10 +9,10 @@ import Event from '../../pages/model/event.model';
 @Injectable()
 export class ListEventProvider {
 
-  private events : Array<any>;
+  private events : Array<Event>;
 
   constructor() {
-    this.events=new Array<any>();
+    this.events=new Array<Event>();
    this.events=[{
       id: 1,
       nom: "Jardin Vauban",
