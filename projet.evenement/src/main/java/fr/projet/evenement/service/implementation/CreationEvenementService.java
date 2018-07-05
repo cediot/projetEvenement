@@ -24,7 +24,7 @@ public class CreationEvenementService implements ICreationEvenementService {
 	private IUtilisateurDAO daoUtilisateur;
 
 	@Override
-	@Transactional(readOnly = true, rollbackFor = Exception.class)
+	@Transactional(rollbackFor = Exception.class)
 	public Evenement creerEvenement(int utilisateurId, String nomEvenement, String adresse, double tarif,
 			Timestamp dateDebutEvenement, Timestamp dateFinEvenement) throws Exception {
 
