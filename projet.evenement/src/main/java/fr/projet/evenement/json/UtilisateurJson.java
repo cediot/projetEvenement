@@ -2,7 +2,7 @@ package fr.projet.evenement.json;
 
 import java.sql.Date;
 
-public class CompteJson {
+public class UtilisateurJson {
 	private String nom;
 	private String prenom;
 	private String pseudonyme;

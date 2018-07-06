@@ -14,9 +14,9 @@ export class EventsPage {
   }
 
   ionViewDidLoad() {
-   let event1 = this.navParams.get('event');
-   this.event = event1;
-   console.log(event);
+   let selectedEvent = this.navParams.get('event');
+   this.event = selectedEvent;
+   console.log(selectedEvent);
   }
 
 }

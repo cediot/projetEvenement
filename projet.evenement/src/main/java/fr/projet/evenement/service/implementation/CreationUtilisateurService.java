@@ -13,10 +13,10 @@ import fr.projet.evenement.entity.Utilisateur;
 import fr.projet.evenement.exception.ErreurFonctionnelleException;
 import fr.projet.evenement.exception.ErreurTechniqueException;
 import fr.projet.evenement.exception.UtilisateurIdentiqueException;
-import fr.projet.evenement.service.ICreationCompteService;
+import fr.projet.evenement.service.ICreationUtilisateurService;
 
 @Service
-public class CreationCompteService implements ICreationCompteService {
+public class CreationUtilisateurService implements ICreationUtilisateurService {
 	private static final Logger LOG = LogManager.getLogger(); // singleton
 	@Autowired
 	private IUtilisateurDAO util;
@@ -25,7 +25,7 @@ public class CreationCompteService implements ICreationCompteService {
 	@Transactional(rollbackFor = Exception.class)
 	public Utilisateur creationCompte(String nom, String prenom, String pseudonyme, String email, String pwd,
 			Date dateDeNaissance) throws ErreurFonctionnelleException, ErreurTechniqueException {
-		CreationCompteService.LOG.debug("creationCompte {} Xxxx");
+		CreationUtilisateurService.LOG.debug("creationCompte {} Xxxx");
 		if (email == null || email.trim().length() == 0) {
 			throw new IllegalArgumentException("Email");
 		}
@@ -43,7 +43,7 @@ public class CreationCompteService implements ICreationCompteService {
 			throw new UtilisateurIdentiqueException("meme utilisateur" + email);
 
 		}
-		CreationCompteService.LOG.debug("authentifier Resultat = {} ", resultat);
+		CreationUtilisateurService.LOG.debug("authentifier Resultat = {} ", resultat);
 		return resultat;
 
 	}
