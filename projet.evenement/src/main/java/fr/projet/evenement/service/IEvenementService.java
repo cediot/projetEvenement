@@ -9,4 +9,8 @@ public interface IEvenementService {
 	public abstract Collection<Evenement> findEvenementByUserId(int idUtilisateur, boolean evenementValider,
 			boolean evenementCreateur, boolean evenementParticiper) throws Exception;
 
+	public abstract Evenement findOne(int idEvenement) throws Exception;
+
+	public abstract Evenement save(Evenement pEvenement) throws Exception;
+
 }

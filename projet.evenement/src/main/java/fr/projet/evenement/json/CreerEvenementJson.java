@@ -9,12 +9,22 @@ import java.sql.Timestamp;
  */
 
 public class CreerEvenementJson {
+
+	private int idEvenement;
 	private int utilisateurId;
 	private String nomEvenement;
 	private String adresse;
 	private double tarif;
 	private Timestamp dateDebutEvenement;
 	private Timestamp dateFinEvenement;
+
+	public int getIdEvenement() {
+		return this.idEvenement;
+	}
+
+	public void setIdEvenement(int idEvenement) {
+		this.idEvenement = idEvenement;
+	}
 
 	public int getUtilisateurId() {
 		return this.utilisateurId;
