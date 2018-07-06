@@ -19,5 +19,11 @@ export class EventDetailsComponent {
     
   }
 
+  ionViewDidLoad() {
+    let event1 = this.navParams.get('event');
+    this.selectedEvent = event1;
+    console.log(event1);
+   }
+ 
   
 }
