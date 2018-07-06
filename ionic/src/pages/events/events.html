@@ -11,7 +11,17 @@
   </ion-header>
 <!-- page qui affichera les Evenements -->
 <ion-content padding>
-<event-details></event-details>
+
+  <ion-card *ngIf="selectedEvent">
+    <h2>{{selectedEvent.nom | uppercase}} Details</h2>
+    <div>
+      <span>id: </span>{{selectedEvent.dateDebut}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="selectedEvent.nom" placeholder="nom">
+      </label>
+    </div>
+  </ion-card>
 </ion-content>
 <ion-footer>
     <p>Designed by AKCF</p>

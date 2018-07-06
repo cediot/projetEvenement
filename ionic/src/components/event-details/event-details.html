@@ -1,13 +1,2 @@
 <h2>Evenement en détails:</h2>
 
-
-<div *ngIf="selectedEvent">
-  <h2>{{selectedEvent.nom | uppercase}} Details</h2>
-  <div>
-    <span>id: </span>{{selectedEvent.dateDebut}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedEvent.nom" placeholder="nom">
-    </label>
-  </div>
-</div>
