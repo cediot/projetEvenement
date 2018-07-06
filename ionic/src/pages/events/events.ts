@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import Event from '../model/event.model';
 
 
 @IonicPage()
@@ -11,12 +12,18 @@ export class EventsPage {
   event: Event;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
   }
 
+
+
   ionViewDidLoad() {
+
    let selectedEvent = this.navParams.get('event');
    this.event = selectedEvent;
+   
    console.log(selectedEvent);
+   
   }
 
 }

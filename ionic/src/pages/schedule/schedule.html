@@ -11,16 +11,23 @@
 <!--cette page affichera la liste des evenements existant en cour et a venir dans la zone selectionné -->
 
 <ion-content padding>
-    <ion-searchbar [(ngModel)]="searchValue"[showCancelButton]="shouldShowCancel"
-    (ionInput)="search()">
-    </ion-searchbar>
-    
     <ion-card *ngFor="let event of events">
-        <button ion-button (click)="goToDetail(event)">
+        <ion-card-header>
             <span class="badge">{{event.nom}}</span>
-           
-        </button>
-    
+        </ion-card-header>
+
+        <ion-list>
+            <button ion-button ion-icon name="cart" item-start (click)="goToDetail(event)">
+                Details
+            </button>
+            <div>{{event.dateDebut}}</div>
+        </ion-list>
+
+
+
+
+
+
     </ion-card>
 
 </ion-content>

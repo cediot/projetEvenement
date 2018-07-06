@@ -22,8 +22,8 @@ import { CalendarComponent } from '../components/calendar/calendar';
 import { CalendarModule } from 'angular-calendar';
 import { RecherchePage } from '../pages/recherche/recherche';
 import { SettingsPage } from '../pages/settings/settings';
-import { EventDetailsComponent } from '../components/event-details/event-details';
 import { ListEventProvider } from '../providers/list-event/list-event';
+import { EventDetailsProvider } from '../providers/event-details/event-details';
 
 
 @NgModule({
@@ -36,8 +36,8 @@ import { ListEventProvider } from '../providers/list-event/list-event';
     CalendarComponent,
     AjouterPage,
     RecherchePage,
-    SettingsPage,
-    EventDetailsComponent
+    SettingsPage
+    
   ],
   imports: [
     BrowserModule,
@@ -68,8 +68,8 @@ import { ListEventProvider } from '../providers/list-event/list-event';
     RevealProvider,
     Geolocation,
     Calendar,
-    EventDetailsComponent,
-    ListEventProvider
+    ListEventProvider,
+    EventDetailsProvider
   ]
 })
 export class AppModule { }
