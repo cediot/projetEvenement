@@ -6,7 +6,7 @@ import fr.projet.evenement.entity.Utilisateur;
 import fr.projet.evenement.exception.ErreurFonctionnelleException;
 import fr.projet.evenement.exception.ErreurTechniqueException;
 
-public interface ICreationCompteService {
+public interface ICreationUtilisateurService {
 	/**
 	 * Authentifie un utilisateur.
 	 *

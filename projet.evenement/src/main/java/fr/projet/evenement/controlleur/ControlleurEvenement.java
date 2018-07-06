@@ -27,8 +27,7 @@ public class ControlleurEvenement {
 	private IEvenementService service;
 
 	// http://localhost:8080/evenements/utilisateur en PUT uniquement
-	// avec un json dans le body : {"idUtilisateur":1, "evenementValider": true,
-	// "evenementParticiper": true, "evenementCreateur":true}
+	// avec un json dans le body : {"idUtilisateur":1, "evenementValider": true,"evenementParticiper": true, "evenementCreateur":true}
 	@RequestMapping(path = "/utilisateur", produces = "application/json; charset=UTF-8", consumes = "application/json; charset=UTF-8", method = {
 			RequestMethod.PUT })
 	public ResponseEntity<Object> even001(@RequestBody EvenementUtilisateurJson eveUtilJson) {
