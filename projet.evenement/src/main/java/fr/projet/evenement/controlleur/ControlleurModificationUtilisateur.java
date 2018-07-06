@@ -11,13 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.projet.evenement.entity.Utilisateur;
-import fr.projet.evenement.json.CompteJson;
 import fr.projet.evenement.json.ExceptionJson;
+import fr.projet.evenement.json.UtilisateurJson;
 import fr.projet.evenement.service.IUtilisateurService;
 
 @RestController
 @RequestMapping("/modification/utilisateur")
-
 public class ControlleurModificationUtilisateur {
 	private static final Logger LOG = LogManager.getLogger();
 
@@ -26,7 +25,7 @@ public class ControlleurModificationUtilisateur {
 
 	@RequestMapping(produces = "application/json; charset=UTF-8", consumes = "application/json; charset=UTF-8", method = {
 			RequestMethod.PUT }) // put envoie
-	public ResponseEntity<Object> modUti001(@RequestBody CompteJson modComJson)
+	public ResponseEntity<Object> modUti001(@RequestBody UtilisateurJson modComJson)
 	{
 		ControlleurModificationUtilisateur.LOG.debug("Dans mon WS ControlleurModificationUtilisateur{}", modComJson);
 		ResponseEntity<Object> reponse = null;
