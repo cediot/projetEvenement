@@ -25,15 +25,21 @@ public class ControlleurModificationUtilisateur {
 
 	@RequestMapping(produces = "application/json; charset=UTF-8", consumes = "application/json; charset=UTF-8", method = {
 			RequestMethod.PUT }) // put envoie
+
 	public ResponseEntity<Object> modUti001(@RequestBody UtilisateurJson modComJson)
 	{
+
 		ControlleurModificationUtilisateur.LOG.debug("Dans mon WS ControlleurModificationUtilisateur{}", modComJson);
 		ResponseEntity<Object> reponse = null;
 		Utilisateur user = null;
 		try {
-			user = this.service.modificationUtilisateur(modComJson.getNom(), modComJson.getPrenom(),
-					modComJson.getPseudonyme(), modComJson.getEmail(), modComJson.getPwd(),
-					modComJson.getDateDeNaissance());
+			user = this.service.findOneByEmail(modComJson.getEmail());
+			user.setDateDeNaissance(modComJson.getDateDeNaissance());
+			user.setEmail(modComJson.getEmail());
+			user.setNom(modComJson.getNom());
+			user.setPrenom(modComJson.getPrenom());
+			user.setDateDeNaissance(modComJson.getDateDeNaissance());
+			user = this.service.save(user);
 		} catch (Exception e) {
 			reponse = new ResponseEntity<>(new ExceptionJson(e), HttpStatus.NOT_FOUND);
 			ControlleurModificationUtilisateur.LOG.debug("Dans mon WS ControlleurModificationUtilisateur qui a plente!",

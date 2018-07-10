@@ -3,13 +3,13 @@ package fr.projet.evenement.exception;
 /**
  * Erreur de creation d evenement.
  */
-public class EvenemenetNonReconnuException extends Exception {
+public class EvenementNonReconnuException extends Exception {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructeur de l'objet.
 	 */
-	public EvenemenetNonReconnuException() {
+	public EvenementNonReconnuException() {
 		super();
 	}
 
@@ -18,7 +18,7 @@ public class EvenemenetNonReconnuException extends Exception {
 	 *
 	 * @param pMessage
 	 */
-	public EvenemenetNonReconnuException(String pMessage) {
+	public EvenementNonReconnuException(String pMessage) {
 		super(pMessage);
 	}
 
@@ -27,7 +27,7 @@ public class EvenemenetNonReconnuException extends Exception {
 	 *
 	 * @param pCause
 	 */
-	public EvenemenetNonReconnuException(Throwable pCause) {
+	public EvenementNonReconnuException(Throwable pCause) {
 		super(pCause);
 	}
 
@@ -37,7 +37,7 @@ public class EvenemenetNonReconnuException extends Exception {
 	 * @param pMessage
 	 * @param pCause
 	 */
-	public EvenemenetNonReconnuException(String pMessage, Throwable pCause) {
+	public EvenementNonReconnuException(String pMessage, Throwable pCause) {
 		super(pMessage, pCause);
 	}
 }

@@ -17,7 +17,7 @@ import fr.projet.evenement.service.ICreationEvenementService;
 
 @RestController
 @RequestMapping("/creerunevenement")
-public class ControlleurCreationEnvenement {
+public class ControlleurCreationEvenement {
 	private static final Logger LOG = LogManager.getLogger();
 
 	@Autowired
@@ -30,7 +30,7 @@ public class ControlleurCreationEnvenement {
 	@RequestMapping(produces = "application/json; charset=UTF-8", consumes = "application/json; charset=UTF-8", method = {
 			RequestMethod.PUT })
 	public ResponseEntity<Object> creeEven(@RequestBody CreerEvenementJson creeEvenJson) {
-		ControlleurCreationEnvenement.LOG.debug("Dans mon WS ControlleurCreationEvenement {}", creeEvenJson);
+		ControlleurCreationEvenement.LOG.debug("Dans mon WS ControlleurCreationEvenement {}", creeEvenJson);
 		ResponseEntity<Object> reponse = null;
 		Evenement even = null;
 		try {
@@ -39,11 +39,11 @@ public class ControlleurCreationEnvenement {
 					creeEvenJson.getDateFinEvenement());
 		} catch (Exception e) {
 			reponse = new ResponseEntity<>(new ExceptionJson(e), HttpStatus.NOT_FOUND);
-			ControlleurCreationEnvenement.LOG.debug("Dans mon WS ControlleurCreationEvenement qui plante!", e);
+			ControlleurCreationEvenement.LOG.debug("Dans mon WS ControlleurCreationEvenement qui plante!", e);
 		}
 		if (reponse == null) {
 			reponse = new ResponseEntity<>(even, HttpStatus.OK);
-			ControlleurCreationEnvenement.LOG.debug("Dans mon WS ControlleurCreationEvenement tout est ok");
+			ControlleurCreationEvenement.LOG.debug("Dans mon WS ControlleurCreationEvenement tout est ok");
 		}
 		return reponse;
 

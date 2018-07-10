@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import fr.projet.evenement.dao.IEvenementDAO;
 import fr.projet.evenement.dao.IUtilisateurDAO;
 import fr.projet.evenement.entity.Evenement;
 import fr.projet.evenement.entity.Utilisateur;
@@ -20,12 +21,12 @@ public class EvenementService implements IEvenementService {
 	private static final Logger LOG = LogManager.getLogger(); // singleton
 	@Autowired
 	private IUtilisateurDAO util;
+	@Autowired
+	private IEvenementDAO eve;
 
 	@Override
 	public Collection<Evenement> findEvenementByUserId(int idUtilisateur, boolean evenementValider,
-			boolean evenementCreateur,
-			boolean evenementParticiper) throws Exception {
-
+			boolean evenementCreateur, boolean evenementParticiper) throws Exception {
 
 		Utilisateur u = this.util.findOne(idUtilisateur);
 		if (u == null) {
@@ -46,5 +47,18 @@ public class EvenementService implements IEvenementService {
 		}
 	}
 
+	@Override
+	public Evenement findOne(int idEvenement) throws Exception {
+		Evenement event = this.eve.findOne(idEvenement);
+		if (event == null) {
+			throw new Exception("Inconnu");
+		}
+		return event;
+	}
+
+	@Override
+	public Evenement save(Evenement pEvenement) throws Exception {
+		return this.eve.save(pEvenement);
+	}
 
 }

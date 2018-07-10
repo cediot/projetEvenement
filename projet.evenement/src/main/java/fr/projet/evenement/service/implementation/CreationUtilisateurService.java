@@ -23,7 +23,7 @@ public class CreationUtilisateurService implements ICreationUtilisateurService {
 
 	@Override
 	@Transactional(rollbackFor = Exception.class)
-	public Utilisateur creationCompte(String nom, String prenom, String pseudonyme, String email, String pwd,
+	public Utilisateur creationCompte(String nom, String prenom, String pseudonyme, String email, String motDePasse,
 			Date dateDeNaissance) throws ErreurFonctionnelleException, ErreurTechniqueException {
 		CreationUtilisateurService.LOG.debug("creationCompte {} Xxxx");
 		if (email == null || email.trim().length() == 0) {
@@ -34,7 +34,7 @@ public class CreationUtilisateurService implements ICreationUtilisateurService {
 		entite.setPrenom(prenom);
 		entite.setPseudonyme(pseudonyme);
 		entite.setEmail(email);
-		entite.setMotDePasse(pwd);
+		entite.setMotDePasse(motDePasse);
 		entite.setDateDeNaissance(dateDeNaissance);
 		Utilisateur resultat = null;
 		if (this.util.findEmail(email) == null) { // il existe deja
