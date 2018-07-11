@@ -39,12 +39,12 @@ export class SchedulePage {
       }).present();
     }
   }
-
   
 
   goToDetail(event:Event) {
     this.selectedEvent=event;
     console.log(event);
-    this.navCtrl.push(EventsPage, {event});
+    
+    this.navCtrl.push(EventsPage, { event });
   }
 }
