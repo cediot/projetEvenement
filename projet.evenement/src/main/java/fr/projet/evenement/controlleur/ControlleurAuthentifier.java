@@ -35,7 +35,7 @@ public class ControlleurAuthentifier {
 			user = this.service.authentifier(autJson.getEmail(), autJson.getPwd());
 		} catch (Exception e) {
 			reponse = new ResponseEntity<>(new ExceptionJson(e), HttpStatus.NOT_FOUND);
-			ControlleurAuthentifier.LOG.debug("Dans mon WS ControlleurAuthentifier qui a plente!", e);
+			ControlleurAuthentifier.LOG.debug("Dans mon WS ControlleurAuthentifier qui a plante!", e);
 		}
 		if (reponse == null) {
 			reponse = new ResponseEntity<>(user, HttpStatus.OK);
@@ -45,5 +45,3 @@ public class ControlleurAuthentifier {
 	}
 
 }
-
-

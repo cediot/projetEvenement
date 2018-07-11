@@ -4,7 +4,6 @@ import java.sql.Timestamp;
 
 import fr.projet.evenement.entity.Evenement;
 import fr.projet.evenement.exception.ErreurFonctionnelleException;
-import fr.projet.evenement.exception.ErreurTechniqueException;
 
 public interface ICreationEvenementService {
 	/**

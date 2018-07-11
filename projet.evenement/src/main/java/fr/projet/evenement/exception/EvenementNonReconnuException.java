@@ -1,16 +1,15 @@
 package fr.projet.evenement.exception;
 
 /**
- * Erreur tehcnique.
+ * Erreur de creation d evenement.
  */
-public class ErreurTechniqueException extends Exception {
-
+public class EvenementNonReconnuException extends Exception {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructeur de l'objet.
 	 */
-	public ErreurTechniqueException() {
+	public EvenementNonReconnuException() {
 		super();
 	}
 
@@ -19,7 +18,7 @@ public class ErreurTechniqueException extends Exception {
 	 *
 	 * @param pMessage
 	 */
-	public ErreurTechniqueException(String pMessage) {
+	public EvenementNonReconnuException(String pMessage) {
 		super(pMessage);
 	}
 
@@ -28,7 +27,7 @@ public class ErreurTechniqueException extends Exception {
 	 *
 	 * @param pCause
 	 */
-	public ErreurTechniqueException(Throwable pCause) {
+	public EvenementNonReconnuException(Throwable pCause) {
 		super(pCause);
 	}
 
@@ -38,8 +37,7 @@ public class ErreurTechniqueException extends Exception {
 	 * @param pMessage
 	 * @param pCause
 	 */
-	public ErreurTechniqueException(String pMessage, Throwable pCause) {
+	public EvenementNonReconnuException(String pMessage, Throwable pCause) {
 		super(pMessage, pCause);
 	}
-
 }

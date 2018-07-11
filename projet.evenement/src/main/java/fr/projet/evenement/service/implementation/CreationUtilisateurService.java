@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import fr.projet.evenement.dao.IUtilisateurDAO;
 import fr.projet.evenement.entity.Utilisateur;
 import fr.projet.evenement.exception.ErreurFonctionnelleException;
-import fr.projet.evenement.exception.ErreurTechniqueException;
 import fr.projet.evenement.exception.UtilisateurIdentiqueException;
 import fr.projet.evenement.service.ICreationUtilisateurService;
 
@@ -24,7 +23,7 @@ public class CreationUtilisateurService implements ICreationUtilisateurService {
 	@Override
 	@Transactional(rollbackFor = Exception.class)
 	public Utilisateur creationCompte(String nom, String prenom, String pseudonyme, String email, String pwd,
-			Date dateDeNaissance) throws ErreurFonctionnelleException, ErreurTechniqueException {
+			Date dateDeNaissance) throws ErreurFonctionnelleException {
 		CreationUtilisateurService.LOG.debug("creationCompte {} Xxxx");
 		if (email == null || email.trim().length() == 0) {
 			throw new IllegalArgumentException("Email");
