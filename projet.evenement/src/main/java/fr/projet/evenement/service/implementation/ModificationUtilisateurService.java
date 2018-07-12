@@ -5,6 +5,7 @@ import java.sql.Date;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.projet.evenement.dao.IUtilisateurDAO;
@@ -12,6 +13,7 @@ import fr.projet.evenement.entity.Utilisateur;
 import fr.projet.evenement.exception.UtilisateurIdentiqueException;
 import fr.projet.evenement.service.IUtilisateurService;
 
+@Service
 public class ModificationUtilisateurService implements IUtilisateurService {
 	private static final Logger LOG = LogManager.getLogger(); // singleton
 	@Autowired
