@@ -4,6 +4,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Calendar } from '@ionic-native/calendar';
+import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -26,6 +27,7 @@ import { ListEventProvider } from '../providers/list-event/list-event';
 import { EventDetailsProvider } from '../providers/event-details/event-details';
 
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -40,6 +42,7 @@ import { EventDetailsProvider } from '../providers/event-details/event-details';
     
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     BrowserAnimationsModule,
     CalendarModule.forRoot(),

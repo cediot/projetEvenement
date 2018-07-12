@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import Event from '../model/event.model';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs';
+import { EventDetailsProvider } from '../../providers/event-details/event-details';
 
 
 @IonicPage()
@@ -9,21 +11,23 @@ import Event from '../model/event.model';
   templateUrl: 'events.html',
 })
 export class EventsPage {
-  event: Event;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    
+  public selectedEvent = {};
+
+  id: number;
+  nom: string;
+  adresse: string;
+  dateDebut: string;
+  dateFin: string;
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api: EventDetailsProvider, private http: Http) {
+    this.selectedEvent=this.navParams.get('selectedEvent');
+    console.log(this.selectedEvent);
   }
 
-
-
   ionViewDidLoad() {
-
-   let selectedEvent = this.navParams.get('event');
-   this.event = selectedEvent;
-   
-   console.log(selectedEvent);
-   
+    this.api.getEvents().subscribe(response => console.log(response));
   }
 
 }

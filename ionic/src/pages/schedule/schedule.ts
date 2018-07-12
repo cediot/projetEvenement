@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController,AlertController, NavParams } from 'ionic-angular';
-import { ListEventProvider } from '../../providers/list-event/list-event';
+import { IonicPage, NavController, AlertController, NavParams } from 'ionic-angular';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs';
+
 import Event from '../model/event.model';
 import { EventsPage } from '../events/events';
+import { EventDetailsProvider } from '../../providers/event-details/event-details';
 
 
 @IonicPage()
@@ -13,38 +16,45 @@ import { EventsPage } from '../events/events';
 export class SchedulePage {
 
   selectedEvent: Event;
-  buffer : Array<any>;
+  buffer: Array<any>;
   searchType: 'nom' | 'dateDebut' = 'nom';
-  searchValue: string='';
+  searchValue: string = '';
   events: Event[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public api:ListEventProvider ) {
-    this.events=api.getEvents();
+  constructor(private http: Http, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public api: EventDetailsProvider) {
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SchedulePage');
+    let event = this.api.getEvents().subscribe(response => { this.events = response; });
+
   }
 
-  search(){
-    this.events=this.buffer.filter((event)=>{
-      let nom = event[this.searchType].toLowerCase(); 
+  search() {
+    this.events = this.buffer.filter((event) => {
+      let nom = event[this.searchType].toLowerCase();
       return nom.startsWith(this.searchValue);
     })
-    if(this.events.length==0){
+    if (this.events.length == 0) {
       this.alertCtrl.create({
-        title :'Hum!',
+        title: 'Hum!',
         subTitle: 'Aucun utilisateur trouvé',
         buttons: ['ok']
       }).present();
     }
   }
-  
 
-  goToDetail(event:Event) {
-    this.selectedEvent=event;
+
+  goToDetail(event: Event) {
+    this.selectedEvent = event;
     console.log(event);
-    
-    this.navCtrl.push(EventsPage, { event });
+
+    this.navCtrl.push(EventsPage, { 
+      event 
+    });
+
+    /*s'ecris aussi  this.navCtrl.push(EventsPage, { 
+      selectedEvent: Event 
+    }); rencerra un objet event vide*/
   }
 }
