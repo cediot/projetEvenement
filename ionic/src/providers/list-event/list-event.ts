@@ -3,9 +3,6 @@ import { Injectable } from '@angular/core';
 import Event from '../../pages/model/event.model';
 
 
-
-
-
 @Injectable()
 export class ListEventProvider {
 

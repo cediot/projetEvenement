@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController,AlertController, NavParams } from 'ionic-angular';
-import { ListEventProvider } from '../../providers/list-event/list-event';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs';
+
 import Event from '../model/event.model';
 import { EventsPage } from '../events/events';
+import { EventDetailsProvider } from '../../providers/event-details/event-details';
 
 
 @IonicPage()
@@ -18,12 +21,12 @@ export class SchedulePage {
   searchValue: string='';
   events: Event[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public api:ListEventProvider ) {
-    this.events=api.getEvents();
+  constructor(private http: Http, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public api:EventDetailsProvider ) {
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SchedulePage');
+    this.http.get('/assets/event.json').map(response => response.json()).subscribe(data=>console.log(data));
   }
 
   search(){
