@@ -32,7 +32,6 @@ public class ControlleurModificationEvenement {
 		} catch (Exception e) {
 			return new ResponseEntity<Object>("Eve introuvable", HttpStatus.ACCEPTED);
 		}
-		// TODO verifier qu'il existe
 		eEnBase.setId(modifEvenJson.getIdEvenement());
 		eEnBase.setAdresse(modifEvenJson.getAdresse());
 		eEnBase.setDateDebut(modifEvenJson.getDateDebutEvenement());
@@ -42,7 +41,6 @@ public class ControlleurModificationEvenement {
 		try {
 			eEnBase = this.service.save(eEnBase);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		// gestion des erreurs

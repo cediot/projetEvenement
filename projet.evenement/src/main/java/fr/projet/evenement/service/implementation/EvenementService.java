@@ -51,7 +51,7 @@ public class EvenementService implements IEvenementService {
 	public Evenement findOne(int idEvenement) throws Exception {
 		Evenement event = this.eve.findOne(idEvenement);
 		if (event == null) {
-			throw new Exception("Inconnu");
+			throw new Exception("evenement inconnu");
 		}
 		return event;
 	}

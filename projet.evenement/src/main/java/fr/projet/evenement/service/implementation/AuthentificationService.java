@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import fr.projet.evenement.dao.IUtilisateurDAO;
 import fr.projet.evenement.entity.Utilisateur;
 import fr.projet.evenement.exception.ErreurFonctionnelleException;
-import fr.projet.evenement.exception.ErreurTechniqueException;
 import fr.projet.evenement.exception.UtilisateurNonReconnuException;
 import fr.projet.evenement.service.IAuthentificationService;
 
@@ -21,8 +20,7 @@ public class AuthentificationService implements IAuthentificationService {
 
 	@Override
 	@Transactional(readOnly = true, rollbackFor = Exception.class)
-	public Utilisateur authentifier(String pEmail, String pMotDePasse)
-			throws ErreurFonctionnelleException, ErreurTechniqueException {
+	public Utilisateur authentifier(String pEmail, String pMotDePasse) throws ErreurFonctionnelleException {
 
 		AuthentificationService.LOG.debug("authentifier {} Xxxx", pEmail);
 		if (pEmail == null || pEmail.trim().isEmpty()) {
