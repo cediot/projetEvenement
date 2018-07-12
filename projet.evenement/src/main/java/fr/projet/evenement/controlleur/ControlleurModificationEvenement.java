@@ -26,11 +26,13 @@ public class ControlleurModificationEvenement {
 	@RequestMapping(produces = "application/json; charset=UTF-8", consumes = "application/json; charset=UTF-8", method = {
 			RequestMethod.PUT })
 	public ResponseEntity<Object> modifEven(@RequestBody CreerEvenementJson modifEvenJson) {
+		ControlleurModificationEvenement.LOG.debug("Dans mon controlleur modification evenement", modifEvenJson);
+
 		Evenement eEnBase = null;
 		try {
 			eEnBase = this.service.findOne(modifEvenJson.getIdEvenement());
 		} catch (Exception e) {
-			return new ResponseEntity<Object>("Eve introuvable", HttpStatus.ACCEPTED);
+			return new ResponseEntity<Object>("Even introuvable", HttpStatus.ACCEPTED);
 		}
 		eEnBase.setId(modifEvenJson.getIdEvenement());
 		eEnBase.setAdresse(modifEvenJson.getAdresse());

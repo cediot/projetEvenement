@@ -16,6 +16,7 @@ public class ModificationUtilisateurService implements IUtilisateurService {
 	private static final Logger LOG = LogManager.getLogger(); // singleton
 	@Autowired
 	private IUtilisateurDAO util;
+
 	@Override
 	@Transactional(rollbackFor = Exception.class)
 	public Utilisateur modificationUtilisateur(String nom, String prenom, String pseudonyme, String email,
@@ -48,27 +49,28 @@ public class ModificationUtilisateurService implements IUtilisateurService {
 		entite.setMotDePasse(motDePasse);
 		entite.setDateDeNaissance(dateDeNaissance);
 
-		ModificationUtilisateurService.LOG.debug("Modification Resultat = {} ", resultat);
-		return resultat;
+		Utilisateur utilcree = this.util.save(entite);
 
+		ModificationUtilisateurService.LOG.debug("Modification Resultat = {} ", utilcree);
+		return utilcree;
 
-		//// return null;
-		////
-		////
-		////
-		//// public Utilisateur save (Utilisateur id) {
-		//// return this.util.save(id);
-		//// }
-		////
-		////
-		//// public Utilisateur findOne (int id) throws Exception {
-		//// Utilisateur util = this.util.findOne(id);
-		//// if (util == null) {
-		//// throw new UtilisateurNonReconnuException("Utilisateur Inconnu");
-		//// }
-		//// return util;
-		//// }
-		//// }
+		// // return null;
+		// //
+		// //
+		// //
+		// // public Utilisateur save (Utilisateur id) {
+		// // return this.util.save(id);
+		// // }
+		// //
+		// //
+		// // public Utilisateur findOne (int id) throws Exception {
+		// // Utilisateur util = this.util.findOne(id);
+		// // if (util == null) {
+		// // throw new UtilisateurNonReconnuException("Utilisateur Inconnu");
+		// // }
+		// // return util;
+		// // }
+		// // }
 		// }
 		//
 		//
@@ -102,7 +104,5 @@ public class ModificationUtilisateurService implements IUtilisateurService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
 
 }
