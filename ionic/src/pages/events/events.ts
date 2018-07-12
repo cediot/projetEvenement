@@ -11,6 +11,9 @@ import { EventDetailsProvider } from '../../providers/event-details/event-detail
   templateUrl: 'events.html',
 })
 export class EventsPage {
+
+  public selectedEvent = {};
+
   id: number;
   nom: string;
   adresse: string;
@@ -19,11 +22,12 @@ export class EventsPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: EventDetailsProvider, private http: Http) {
-    
+    this.selectedEvent=this.navParams.get('selectedEvent');
+    console.log(this.selectedEvent);
   }
 
   ionViewDidLoad() {
-    const newLocal = this.http.get('/assets/event.json').map(response => response.json()).subscribe(data => console.log(data));
+    this.api.getEvents().subscribe(response => console.log(response));
   }
 
 }

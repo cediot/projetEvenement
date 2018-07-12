@@ -14,8 +14,8 @@
 <!-- page qui affichera les Evenements -->
 <ion-content padding>
   Details
-  <ion-card  >
-   
+  <ion-card *ngFor="let event of events" >
+   <img [src]="" />
      <label>{{event}}</label>
    
   </ion-card>
