@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.projet.evenement.entity.Utilisateur;
-import fr.projet.evenement.json.UtilisateurJson;
 import fr.projet.evenement.json.ExceptionJson;
+import fr.projet.evenement.json.UtilisateurJson;
 import fr.projet.evenement.service.ICreationUtilisateurService;
 
 @RestController
@@ -26,7 +26,7 @@ public class ControlleurCreationUtilisateur {
 	// http://localhost:8080/creationCompte en PUT uniquement
 	// avec un json dans le body :
 
-	// {"nom":"legrand","prenom":"gerald","pseudonyme":"gege","email":"toto@oll.com","pwd":"tata","dateDeNaissance":"1997-07-15\"}
+	// {"nom":"legrand","prenom":"gerald","pseudonyme":"gege","email":"toto@oll.com","pwd":"tata","dateDeNaissance":"1997-07-15"}
 	// String nom, String prenom,
 
 	@RequestMapping(produces = "application/json; charset=UTF-8", consumes = "application/json; charset=UTF-8", method = {

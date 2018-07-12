@@ -24,9 +24,9 @@ public class ControlleurCreationEvenement {
 	private ICreationEvenementService service;
 
 	// http://localhost:8080/creerunevenement en PUT uniquement
-	// avec un json dans le body : {"utilisateurId" : 2, "nomEvenement": "wazemme
-	// accordeon", "adresse": "5 rue des halles", "tarif":20,00,
-	// "dateDebutEvenement":"04/06/2018", "deteFinEvenement":"05/06/2018"}
+	// avec un json dans le body : {"utilisateurId" : 2,
+	// "nomEvenement":"wazemmeaccordeon", "adresse": "5 rue
+	// deshalles","tarif":20,00,"dateDebutEvenement":"04/06/2018","deteFinEvenement":"05/06/2018"}
 	@RequestMapping(produces = "application/json; charset=UTF-8", consumes = "application/json; charset=UTF-8", method = {
 			RequestMethod.PUT })
 	public ResponseEntity<Object> creeEven(@RequestBody CreerEvenementJson creeEvenJson) {

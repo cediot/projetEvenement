@@ -27,11 +27,15 @@ public class ControlleurModificationEvenement {
 			RequestMethod.PUT })
 	public ResponseEntity<Object> modifEven(@RequestBody CreerEvenementJson modifEvenJson) {
 		Evenement eEnBase = null;
+
 		try {
+			ControlleurModificationEvenement.LOG.debug("Dans le try de findOne");
 			eEnBase = this.service.findOne(modifEvenJson.getIdEvenement());
+
 		} catch (Exception e) {
-			return new ResponseEntity<Object>("Eve introuvable", HttpStatus.ACCEPTED);
+			return new ResponseEntity<Object>("Eve introuvable", HttpStatus.NOT_MODIFIED);
 		}
+		ControlleurModificationEvenement.LOG.debug("Dans modification de l'event");
 		eEnBase.setId(modifEvenJson.getIdEvenement());
 		eEnBase.setAdresse(modifEvenJson.getAdresse());
 		eEnBase.setDateDebut(modifEvenJson.getDateDebutEvenement());
@@ -39,6 +43,7 @@ public class ControlleurModificationEvenement {
 		eEnBase.setNom(modifEvenJson.getNomEvenement());
 		eEnBase.setTarif(modifEvenJson.getTarif());
 		try {
+			ControlleurModificationEvenement.LOG.debug("Dans la methode Save");
 			eEnBase = this.service.save(eEnBase);
 		} catch (Exception e) {
 			e.printStackTrace();
