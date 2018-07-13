@@ -1,6 +1,7 @@
 package fr.projet.evenement.service;
 
 import fr.projet.evenement.entity.Utilisateur;
+import fr.projet.evenement.exception.ErreurFonctionnelleException;
 
 public interface IAuthentificationService {
 	/**
@@ -18,5 +19,7 @@ public interface IAuthentificationService {
 	 */
 	public abstract Utilisateur authentifier(String pLogin, String pPassword)
 			throws Exception;
+
+	public abstract Utilisateur modification(Utilisateur pUtilisateur) throws Exception;
 
 }

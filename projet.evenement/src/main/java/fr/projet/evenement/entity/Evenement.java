@@ -28,7 +28,7 @@ public class Evenement implements Serializable {
 
 	private String adresse;
 
-	@Column(name = "dateDebut")
+	@Column(name = "dateDebut", nullable = false)
 	private Timestamp dateDebut;
 	@Column(name = "dateFin")
 	private Timestamp dateFin;

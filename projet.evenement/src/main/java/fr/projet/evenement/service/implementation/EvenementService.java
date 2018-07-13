@@ -22,7 +22,7 @@ public class EvenementService implements IEvenementService {
 	@Autowired
 	private IUtilisateurDAO util;
 	@Autowired
-	private IEvenementDAO eve;
+	private IEvenementDAO evenementDao;
 
 	@Override
 	public Collection<Evenement> findEvenementByUserId(int idUtilisateur, boolean evenementValider,
@@ -49,7 +49,7 @@ public class EvenementService implements IEvenementService {
 
 	@Override
 	public Evenement findOne(int idEvenement) throws Exception {
-		Evenement event = this.eve.findOne(idEvenement);
+		Evenement event = this.evenementDao.findOne(idEvenement);
 		if (event == null) {
 			throw new Exception("evenement inconnu");
 		}
@@ -57,8 +57,13 @@ public class EvenementService implements IEvenementService {
 	}
 
 	@Override
-	public Evenement save(Evenement pEvenement) throws Exception {
-		return this.eve.save(pEvenement);
+	public Evenement save(Evenement pEvenement) {
+		return this.evenementDao.save(pEvenement);
+	}
+
+	@Override
+	public Evenement modification(Evenement evenement) {
+		return this.evenementDao.save(evenement);
 	}
 
 }
