@@ -14,10 +14,16 @@
 <!-- page qui affichera les Evenements -->
 <ion-content padding>
   Details
-  <ion-card *ngFor="let event of events" >
-   <img [src]="" />
-     <label>{{event}}</label>
-   
+  <ion-card>
+    <ion-card-header>
+      <img [src]="" />
+    </ion-card-header>
+    <h3>{{event.nom}}</h3>
+    <ion-card-content>
+      {{event.adresse}}
+      
+    </ion-card-content>
+
   </ion-card>
 
 </ion-content>

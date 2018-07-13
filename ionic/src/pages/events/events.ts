@@ -12,7 +12,7 @@ import { EventDetailsProvider } from '../../providers/event-details/event-detail
 })
 export class EventsPage {
 
-  public selectedEvent = {};
+  public event = {};
 
   id: number;
   nom: string;
@@ -22,8 +22,8 @@ export class EventsPage {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: EventDetailsProvider, private http: Http) {
-    this.selectedEvent=this.navParams.get('selectedEvent');
-    console.log(this.selectedEvent);
+    this.event=this.navParams.get('event');
+    console.log(this.event);
   }
 
   ionViewDidLoad() {
