@@ -25,6 +25,7 @@ import { RecherchePage } from '../pages/recherche/recherche';
 import { SettingsPage } from '../pages/settings/settings';
 import { ListEventProvider } from '../providers/list-event/list-event';
 import { EventDetailsProvider } from '../providers/event-details/event-details';
+import { ConnectivityServiceProvider } from '../providers/connectivity-service/connectivity-service';
 
 
 
@@ -72,7 +73,8 @@ import { EventDetailsProvider } from '../providers/event-details/event-details';
     Geolocation,
     Calendar,
     ListEventProvider,
-    EventDetailsProvider
+    EventDetailsProvider,
+    ConnectivityServiceProvider
   ]
 })
 export class AppModule { }
