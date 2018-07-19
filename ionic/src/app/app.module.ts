@@ -11,7 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { AjouterPage } from '../pages/ajouter/ajouter';
 
 
-import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { RevealProvider } from '../providers/reveal/reveal';
@@ -74,7 +74,8 @@ import { ConnectivityServiceProvider } from '../providers/connectivity-service/c
     Calendar,
     ListEventProvider,
     EventDetailsProvider,
-    ConnectivityServiceProvider
+    ConnectivityServiceProvider,
+    GoogleMapsAPIWrapper
   ]
 })
 export class AppModule { }
