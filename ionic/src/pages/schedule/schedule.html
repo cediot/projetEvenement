@@ -4,7 +4,7 @@
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>liste d'evenements</ion-title>
+        <h1>liste d'evenements</h1>
     </ion-navbar>
 
 </ion-header>
@@ -13,16 +13,18 @@
 <ion-content padding>
     <ion-card *ngFor="let event of events">
         <ion-card-header>
-            <h3>{{event.nom}}</h3>
+            <a (click)="goToDetail(event)">
+                <h3>{{event.nom}}</h3>
+            </a>
         </ion-card-header>
-
+        <img [src]="" />
         <ion-list>
-            <button ion-button ion-icon name="cart" item-start (click)="goToDetail(event)">
-                Details
-            </button>
-            <div>{{event.dateDebut}}</div>
-        </ion-list>
 
+            <div>{{event.tarif}}</div>
+        </ion-list>
+        <a (click)="goToDetail(event)">
+            Details
+        </a>
     </ion-card>
 
 </ion-content>
