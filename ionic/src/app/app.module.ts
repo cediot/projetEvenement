@@ -26,8 +26,19 @@ import { SettingsPage } from '../pages/settings/settings';
 import { ListEventProvider } from '../providers/list-event/list-event';
 import { EventDetailsProvider } from '../providers/event-details/event-details';
 import { ConnectivityServiceProvider } from '../providers/connectivity-service/connectivity-service';
+// angular fire
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
-
+export const firebaseConfig = {
+  apiKey: "AIzaSyBoT9K1AOKCx6ajIyYr0DtK3dwDvwFCTlo",
+  authDomain: "event-727d4.firebaseapp.com",
+  databaseURL: "https://event-727d4.firebaseio.com",
+  projectId: "event-727d4",
+  storageBucket: "event-727d4.appspot.com",
+  messagingSenderId: "259772268143"
+};
 
 @NgModule({
   declarations: [
@@ -40,7 +51,7 @@ import { ConnectivityServiceProvider } from '../providers/connectivity-service/c
     AjouterPage,
     RecherchePage,
     SettingsPage
-    
+
   ],
   imports: [
     HttpModule,
@@ -51,6 +62,9 @@ import { ConnectivityServiceProvider } from '../providers/connectivity-service/c
       apiKey: 'AIzaSyDPAFhOaeiQo7fum-pewjEAHT3E_ywQpEU'
     }),
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -62,7 +76,7 @@ import { ConnectivityServiceProvider } from '../providers/connectivity-service/c
     AjouterPage,
     RecherchePage,
     SettingsPage,
-    
+
 
   ],
   providers: [
