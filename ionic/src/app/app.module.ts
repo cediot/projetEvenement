@@ -30,14 +30,7 @@ import { ConnectivityServiceProvider } from '../providers/connectivity-service/c
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyBoT9K1AOKCx6ajIyYr0DtK3dwDvwFCTlo",
-  authDomain: "event-727d4.firebaseapp.com",
-  databaseURL: "https://event-727d4.firebaseio.com",
-  projectId: "event-727d4",
-  storageBucket: "event-727d4.appspot.com",
-  messagingSenderId: "259772268143"
-};
+
 
 @NgModule({
   declarations: [
@@ -58,7 +51,7 @@ export const firebaseConfig = {
     BrowserAnimationsModule,
     CalendarModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDPAFhOaeiQo7fum-pewjEAHT3E_ywQpEU'
+      apiKey: 
     }),
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
