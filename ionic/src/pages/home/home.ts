@@ -5,7 +5,7 @@ import { NavController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Observable } from 'rxjs/Observable';
 // firebase services
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 
 
@@ -75,13 +75,13 @@ export class HomePage {
   lat: number = 50.632035;
   lng: number = 3.059844;
   geocoder: any;
-  private db: Observable<{}[]>;
+  private db: any;
 
   constructor(
     public navCtrl: NavController, 
     private geolocation: Geolocation, 
     private mapsAPILoader: MapsAPILoader, 
-    fireBase:AngularFireDatabase ) {
+    private afs:AngularFirestore ) {
 
     this.geolocation.getCurrentPosition().then((resp) => {
       this.lat = resp.coords.latitude
@@ -90,14 +90,14 @@ export class HomePage {
       console.log('Error getting location', error);
     });
 
-    this.db = fireBase.list('evenements').valueChanges();
+    this.db = this.afs.collection('evenements');
 
-    this.db.subscribe(function(data) {
-      jsonEvent.forEach(element => {
-        data.push(element)
-      });
+    // this.db.subscribe(function(data) {
+    // //   jsonEvent.forEach(element => {
+    // //     data.push(element)
+    // //   });
       
-    })
+    // })
   }
 
   public onMapReady(map) {

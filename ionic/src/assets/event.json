@@ -6,7 +6,7 @@
         "tarif": "gratuit",
         "dateDebut": "2018-06-12 10:00:00",
         "dateFin": "2018-06-13 11:00:00",
-        "validation":"ok", 
+        "validation":true, 
         "utilisateurId":"02"
     },
     {
@@ -16,7 +16,7 @@
         "tarif": "gratuit",
         "dateDebut": "2018-06-15 08:00:00",
         "dateFin": "2018-06-16 10:00:00",
-        "validation":"ok", 
+        "validation":true, 
         "utilisateurId":"05"
     },
     {
@@ -26,7 +26,7 @@
         "tarif": "10.00",
         "dateDebut": "2018-06-20 10:00:00",
         "dateFin": "2018-06-20 12:00:00",
-        "validation": "ok",
+        "validation": true,
         "utilisateurId":"02"
     },
     {
@@ -36,7 +36,7 @@
         "tarif": "gratuit",
         "dateDebut": "2018-07-01 20:00:00",
         "dateFin": "2018-07-01 21:00:00",
-        "validation":"ok", 
+        "validation":true, 
         "utilisateurId":"04"
     },
     {
@@ -46,7 +46,7 @@
         "tarif": "gratuit",
         "dateDebut": "2018-06-28 15:00:00",
         "dateFin": "2018-06-28 16:00:00",
-        "validation":"ok",
+        "validation":true,
         "utilisateurId":"03"
     }
 ]

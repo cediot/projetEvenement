@@ -28,8 +28,7 @@ import { EventDetailsProvider } from '../providers/event-details/event-details';
 import { ConnectivityServiceProvider } from '../providers/connectivity-service/connectivity-service';
 // angular fire
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBoT9K1AOKCx6ajIyYr0DtK3dwDvwFCTlo",
@@ -63,8 +62,7 @@ export const firebaseConfig = {
     }),
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFirestoreModule.enablePersistence()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

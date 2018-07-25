@@ -17,14 +17,13 @@
                 <h3>{{event.nom}}</h3>
             </a>
         </ion-card-header>
-        <img [src]="" />
-        <ion-list>
+        <ion-card-content>
+            <img [src]="" />
 
-            <div>{{event.tarif}}</div>
-        </ion-list>
-        <a (click)="goToDetail(event)">
-            Details
-        </a>
+            <a (click)="goToDetail(event)">
+                Details
+            </a>
+        </ion-card-content>
     </ion-card>
 
 </ion-content>
